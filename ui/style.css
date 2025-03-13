@@ -1,0 +1,48 @@
+:root {
+    --primary-font: "";
+}
+
+body {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#tom {
+    height: 65vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.unselectable {
+    -webkit-user-drag: none; /* Chrome, Safari */
+    user-drag: none; /* Standard syntax */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    user-select: none; /* Standard syntax */
+}
+
+#cursor {
+    width: 20vh;
+    height: 20vh;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    /* pointer-events: none; */
+    z-index: -1;
+    transition: transform 0.1s ease-out;
+    transform: translate(-50%, -50%);
+    /* display: none; */
+}
+
+#deno {
+    display: none;
+}
+
+#marcinlowercase {
+    color: white;
+}

@@ -1,3 +1,4 @@
+//server.js
 import { serve } from "https://deno.land/std@0.211.0/http/server.ts";
 import { join } from "https://deno.land/std@0.211.0/path/mod.ts";
 import { contentType } from "https://deno.land/std@0.211.0/media_types/mod.ts";
@@ -12,11 +13,11 @@ const handleRequest = async (request) => {
   try {
     let filePath = "";
     if (pathname === "/i") {
-      // Serve index.html when the root path is requested
       filePath = join(Deno.cwd(), UI_DIRECTORY, "index.html");
     } else {
-      // Serve other files from the ui directory
+      console.log(pathname);
       filePath = join(Deno.cwd(), UI_DIRECTORY, pathname);
+      console.log(filePath);
     }
 
     const file = await Deno.readFile(filePath);

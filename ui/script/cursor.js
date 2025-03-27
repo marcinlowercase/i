@@ -8,7 +8,6 @@ document.addEventListener("mousemove", (e) => {
 // Listen for double-click event on the cursor
 cursor.addEventListener("dblclick", () => {
   document.body.style.backgroundColor =
-    document.body.style.backgroundColor === "black" ? "white" : "black"; // Change background to black
+    document.body.style.backgroundColor === "black" ? "white" : "black";
   console.log(document.body.style.backgroundColor === "black");
-  // cursor.style.display = "none"; // Hide the cursor div
 });

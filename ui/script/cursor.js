@@ -7,7 +7,7 @@ document.addEventListener("mousemove", (e) => {
 
 // Listen for double-click event on the cursor
 cursor.addEventListener("dblclick", () => {
-  document.body.style.backgroundColor =
-    document.body.style.backgroundColor === "black" ? "white" : "black";
-  console.log(document.body.style.backgroundColor === "black");
+  document.body.style.background =
+    document.body.style.background === "black" ? "white" : "black";
+  console.log(document.body.style.background === "black");
 });

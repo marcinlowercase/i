@@ -1,9 +1,3 @@
-// const columns = Math.floor(window.innerWidth / 300) + 1;
-// const rows = Math.floor(window.innerHeight / 300) + 1;
-
-// console.log("Number of Columns:", columns);
-// console.log("Number of Rows:", rows);
-
 function createDynamicGrid(numColumns, numRows) {
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("dynamic-grid-container");
@@ -49,6 +43,7 @@ function createDynamicGrid(numColumns, numRows) {
 // Example usage:
 const columns = Math.floor(window.innerWidth / 300) + 1;
 const rows = Math.floor(window.innerHeight / 300) + 1;
+console.log(`${columns} x ${rows}`);
 
 // Call the function to create the grid
 const grid = createDynamicGrid(columns, rows);

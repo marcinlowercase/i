@@ -9,7 +9,7 @@ id("tom").addEventListener("mouseout", (e) => {
   if (!lock) {
     id("tom").style.opacity = "0";
     id("cursor").style.opacity = "1";
-    id("name").style.background = "white";
+    id("name").style.background = "transparent";
     document.body.style.background = "white";
   }
 });

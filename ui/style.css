@@ -47,7 +47,6 @@ body {
     z-index: 11111;
 }
 #name {
-    background: transparent;
     border-radius: var(--border-radius--regular);
     bottom: 0;
     color: white;
@@ -55,15 +54,33 @@ body {
     font-family: var(--sans-font);
     font-size: var(--font-size--xl);
     font-weight: 400;
-    left: 50%;
+    left: 0;
     padding: var(--line-size--thick);
     position: absolute;
-    transform: translate(-50%, -50%);
+    transform: translate(24px, -24px);
     transition:
         background 0.5s,
         width 0.5s;
     width: fit-content;
+    animation: heartbeat 1.8s ease-in-out infinite; /* Apply the heartbeat animation */
+
 }
+#name:hover {
+    animation: none;
+}
+@keyframes heartbeat {
+  0% {
+    transform: translate(24px, -24px) scale(1);
+  }
+  50% {
+    transform: translate(24px, -24px) scale(1.05); /* Slight increase in scale */
+  }
+  100% {
+    transform: translate(24px, -24px) scale(1);
+  }
+}
+
+
 #transparent_tom {
     z-index: 11110;
 }
@@ -90,9 +107,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-#deno {
-    display: none;
-}
 /*
 .grid-container {
     display: grid;
@@ -130,4 +144,4 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-} */
+}

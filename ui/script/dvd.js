@@ -1,7 +1,6 @@
 // dvd.js
 const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    console.log("Skipping DVD animation on mobile.");
+  if (window.matchMedia("(max-width: 1000px)").matches) {
     return;
   }
 

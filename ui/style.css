@@ -62,12 +62,10 @@ body {
         background 0.5s,
         width 0.5s;
     width: fit-content;
-
 }
 #name:hover {
     animation: none;
 }
-
 
 #transparent_tom {
     z-index: 11110;
@@ -95,7 +93,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/*
 .grid-container {
     display: grid;
     grid-template-columns: repeat(
@@ -139,8 +136,11 @@ body {
         width: 80vw;
         height: auto;
         left: 50%;
-        bottom: 10vh;
-        top: auto;
+        top: 5vh;
         transform: translate(-50%, 0);
+    }
+
+    .dynamic-grid-container {
+        display: none !important;
     }
 }

@@ -140,7 +140,8 @@ body {
         transform: translate(-50%, 0);
     }
 
-    .dynamic-grid-container {
+    .dynamic-grid-container,
+    #cursor {
         display: none !important;
     }
 }

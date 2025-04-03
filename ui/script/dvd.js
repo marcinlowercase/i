@@ -1,5 +1,10 @@
 // dvd.js
-function startDVDBounce(id, originalX, originalY, zoom, speed) {
+const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    console.log("Skipping DVD animation on mobile.");
+    return;
+  }
+
   const dvd = document.getElementById(id);
   if (!dvd) {
     console.error(`Element with ID '${id}' not found.`);
@@ -61,6 +66,6 @@ function startDVDBounce(id, originalX, originalY, zoom, speed) {
     requestAnimationFrame(moveDVD);
   }
   moveDVD();
-}
+};
 
 startDVDBounce("name", 0, 0, 1, 2);

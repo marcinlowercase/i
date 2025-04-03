@@ -105,12 +105,10 @@ body {
 }
 
 .grid-item {
-    background-color: #f0f0f0; /* Example background */
-    border: 1px solid #ccc; /* Optional border */
-    display: flex; /* To center content inside (optional) */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    font-size: 20px; /* Example text style */
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
 }
 
 /* Ensure items remain square */
@@ -133,15 +131,24 @@ body {
 @media (max-width: 768px) {
     #tom,
     #transparent_tom {
-        width: 80vw;
         height: auto;
         left: 50%;
         top: 5vh;
         transform: translate(-50%, 0);
+        width: 80%;
     }
 
     .dynamic-grid-container,
     #cursor {
         display: none !important;
+    }
+
+    #name {
+        bottom: 3%;
+        font-size: var(--font-size--l);
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        width: 80%;
     }
 }

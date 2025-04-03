@@ -20,7 +20,7 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
   let currentSpeed = speed;
 
   dvd.addEventListener("mouseenter", () => {
-    dvd.style.transform = `scale(${currentZoom + 0.1})`;
+    dvd.style.transform = `scale(${currentZoom + 0.5})`;
   });
 
   dvd.addEventListener("mouseleave", () => {

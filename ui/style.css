@@ -60,6 +60,7 @@ body {
     position: absolute;
     transition:
         background 0.5s,
+        all 0.5s;
         width 0.5s;
     width: fit-content;
 }

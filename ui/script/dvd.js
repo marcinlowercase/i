@@ -1,3 +1,4 @@
+// dvd.js
 function startDVDBounce(id, originalX, originalY, zoom, speed) {
   const dvd = document.getElementById(id);
   if (!dvd) {
@@ -25,8 +26,10 @@ function startDVDBounce(id, originalX, originalY, zoom, speed) {
   dvd.addEventListener("mousedown", () => {});
 
   function moveDVD() {
-    const maxX = window.innerWidth - dvd.clientWidth;
-    const maxY = window.innerHeight - dvd.clientHeight;
+    // const maxX = window.innerWidth - dvd.clientWidth;
+    // const maxY = window.innerHeight - dvd.clientHeight;
+    const maxX = document.documentElement.clientWidth - dvd.clientWidth;
+    const maxY = document.documentElement.clientHeight - dvd.clientHeight;
 
     x += dx * currentSpeed;
     y += dy * currentSpeed;

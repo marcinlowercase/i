@@ -1,15 +1,16 @@
-function createDynamicGrid(numColumns, numRows) {
+// grid.js
+const createDynamicGrid = (column, row) => {
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("dynamic-grid-container");
 
   // Set grid layout properties using CSS
   gridContainer.style.display = "grid";
-  gridContainer.style.gridTemplateColumns = `repeat(${numColumns}, 300px)`;
-  gridContainer.style.gridTemplateRows = `repeat(${numRows}, 300px)`;
+  gridContainer.style.gridTemplateColumns = `repeat(${column}, 300px)`;
+  gridContainer.style.gridTemplateRows = `repeat(${row}, 300px)`;
   gridContainer.style.gap = "10px"; // Optional gap between grid items
   // gridContainer.style.padding = "10px"; // Optional padding around the grid
 
-  for (let i = 0; i < numColumns * numRows; i++) {
+  for (let i = 0; i < column * row; i++) {
     const gridItem = document.createElement("div");
     gridItem.id = `grid-spot-${i}`;
     gridItem.classList.add("dynamic-grid-item");
@@ -38,7 +39,7 @@ function createDynamicGrid(numColumns, numRows) {
   document.body.appendChild(gridContainer);
 
   return gridContainer; // Optionally return the created grid container
-}
+};
 
 // Example usage:
 const columns = Math.floor(window.innerWidth / 300) + 1;

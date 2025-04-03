@@ -58,7 +58,6 @@ body {
     left: 0;
     padding: var(--line-size--thick);
     position: absolute;
-    transform: translate(24px, -24px);
     transition:
         background 0.5s,
         width 0.5s;
@@ -133,4 +132,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+@media (max-width: 768px) {
+    #tom,
+    #transparent_tom {
+        width: 80vw;
+        height: auto;
+        left: 50%;
+        bottom: 10vh;
+        top: auto;
+        transform: translate(-50%, 0);
+    }
 }

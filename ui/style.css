@@ -151,4 +151,9 @@ body {
         text-align: center;
         width: 80%;
     }
+    div {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        cursor: pointer;
+    }
 }

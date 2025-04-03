@@ -54,6 +54,7 @@ body {
     font-family: var(--sans-font);
     font-size: var(--font-size--xl);
     font-weight: 400;
+    height: fit-content;
     left: 0;
     padding: var(--line-size--thick);
     position: absolute;
@@ -62,22 +63,10 @@ body {
         background 0.5s,
         width 0.5s;
     width: fit-content;
-    animation: heartbeat 1.8s ease-in-out infinite; /* Apply the heartbeat animation */
 
 }
 #name:hover {
     animation: none;
-}
-@keyframes heartbeat {
-  0% {
-    transform: translate(24px, -24px) scale(1);
-  }
-  50% {
-    transform: translate(24px, -24px) scale(1.05); /* Slight increase in scale */
-  }
-  100% {
-    transform: translate(24px, -24px) scale(1);
-  }
 }
 
 

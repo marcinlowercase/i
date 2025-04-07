@@ -15,6 +15,8 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
   let y = originalY;
   let dx = 1;
   let dy = 1;
+  let lastBounceTime = 0;
+  const bounceInterval = 1000;
 
   let currentZoom = zoom;
   let currentSpeed = speed;
@@ -30,8 +32,6 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
   dvd.addEventListener("mousedown", () => {});
 
   function moveDVD() {
-    // const maxX = window.innerWidth - dvd.clientWidth;
-    // const maxY = window.innerHeight - dvd.clientHeight;
     const maxX = document.documentElement.clientWidth - dvd.clientWidth;
     const maxY = document.documentElement.clientHeight - dvd.clientHeight;
 
@@ -59,9 +59,16 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
       bounced = true;
     }
 
+    if (bounced) {
+      const currentTime = Date.now();
+      if (currentTime - lastBounceTime >= bounceInterval) {
+        changeId(); // Call changeId only if 1 second has passed since the last bounce
+        lastBounceTime = currentTime;
+      }
+    }
+
     dvd.style.left = `${x}px`;
     dvd.style.top = `${y}px`;
-
     requestAnimationFrame(moveDVD);
   }
   moveDVD();

@@ -1,65 +1,60 @@
 // grid.js
-const createDynamicGrid = (column, row) => {
-  const gridContainer = document.createElement("div");
-  gridContainer.classList.add("dynamic-grid-container");
+const createDynamicGrid = () => {
+  const gridLayout = document.createElement("div");
+  gridLayout.id = "grid-layout";
+  gridLayout.style.display = "grid";
 
-  // Set grid layout properties using CSS
-  gridContainer.style.display = "grid";
-  gridContainer.style.gridTemplateColumns = `repeat(${column}, 300px)`;
-  gridContainer.style.gridTemplateRows = `repeat(${row}, 300px)`;
-  gridContainer.style.gap = "10px"; // Optional gap between grid items
-  // gridContainer.style.padding = "10px"; // Optional padding around the grid
+  const column = 5;
+  const gapSize = 10;
+  const gridSide =
+    (document.documentElement.clientWidth - (column - 1) * gapSize) / column;
 
+  const row =
+    Math.floor(
+      (document.documentElement.clientHeight - (column - 1) * gapSize) /
+        gridSide
+    ) + 1;
+
+  console.log("gridSide ", gridSide);
+  console.log(`${column} x ${row}`);
+  gridLayout.style.gridTemplateColumns = `repeat(${column}, ${gridSide}px)`;
+  gridLayout.style.gridTemplateRows = `repeat(${row}, ${gridSide}px)`;
+  gridLayout.style.gap = `${gapSize}px`;
   for (let i = 0; i < column * row; i++) {
-    const gridItem = document.createElement("div");
-    gridItem.id = `grid-spot-${i}`;
-    gridItem.classList.add("dynamic-grid-item");
-    // gridItem.textContent = i + 1; // Example content
-    gridItem.style.width = "300px";
-    gridItem.style.height = "300px";
-    gridItem.style.background = "white"; // Example styling
-    // gridItem.style.border = "1px solid #ccc"; // Example styling
-    gridItem.style.display = "flex";
-    gridItem.style.justifyContent = "center";
-    gridItem.style.alignItems = "center";
-    gridItem.style.transition = "background 0.5s";
+    const gridSpot = document.createElement("div");
+    gridSpot.id = `grid-spot-${i}`;
+    gridSpot.classList.add("grid-spot");
 
-    // Add event listeners for hover effect
-    gridItem.addEventListener("mouseenter", () => {
-      gridItem.style.background = identities[current].color;
+    gridSpot.style.background = "white";
+    gridSpot.style.display = "flex";
+    gridSpot.style.justifyContent = "center";
+    gridSpot.style.alignItems = "center";
+    gridSpot.style.transition = "background 0.5s";
+
+    gridSpot.addEventListener("mouseenter", () => {
+      gridSpot.style.background = identities[current].color;
     });
-    gridItem.addEventListener("mouseleave", () => {
-      gridItem.style.background = "white";
+    gridSpot.addEventListener("mouseleave", () => {
+      gridSpot.style.background = "white";
     });
 
-    gridContainer.appendChild(gridItem);
+    gridLayout.appendChild(gridSpot);
   }
 
-  // Append the created grid to the body or any other desired container
-  document.body.appendChild(gridContainer);
+  document.body.appendChild(gridLayout);
 
-  return gridContainer; // Optionally return the created grid container
+  return gridLayout;
 };
 
-// Example usage:
-const columns = Math.floor(window.innerWidth / 300) + 1;
-const rows = Math.floor(window.innerHeight / 300) + 1;
-console.log(`${columns} x ${rows}`);
+const grid = createDynamicGrid();
 
-// Call the function to create the grid
-const grid = createDynamicGrid(columns, rows);
-
-// You might want to re-calculate and re-create the grid on window resize
 function handleResize() {
-  // Remove the previous grid if it exists
-  const existingGrid = document.querySelector(".dynamic-grid-container");
+  const existingGrid = id("grid-layout");
   if (existingGrid) {
+    console.log("remove old");
     existingGrid.remove();
   }
-
-  const newColumns = Math.floor(window.innerWidth / 300) + 1;
-  const newRows = Math.floor(window.innerHeight / 300) + 1;
-  createDynamicGrid(newColumns, newRows);
+  createDynamicGrid();
 }
 
 window.addEventListener("resize", handleResize);

@@ -1,0 +1,31 @@
+/* avatar.css */
+#tom,
+#transparent_tom {
+  border-radius: 50%;
+  height: 65vh;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#tom {
+  cursor: grab;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 11111;
+}
+
+#transparent_tom {
+  z-index: 11110;
+}
+
+@media (max-width: 768px) {
+  #tom,
+  #transparent_tom {
+    height: 80vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+}

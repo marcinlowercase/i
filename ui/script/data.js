@@ -1,5 +1,5 @@
 // data.js
-identities = [
+let identities = [
   {
     name: "Tran Nguyen Hong Thai",
     color: "black",

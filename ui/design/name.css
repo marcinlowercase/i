@@ -1,0 +1,19 @@
+/* name.css */
+#name {
+  border-radius: var(--border-radius--regular);
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  font-family: var(--sans-font);
+  font-size: var(--font-size--xl);
+  font-weight: 400;
+  height: fit-content;
+  left: 0;
+  padding: var(--line-size--thick);
+  position: absolute;
+  transition: background 0.5s, all 0.5s, width 0.5s;
+  width: fit-content;
+}
+#name:hover {
+  animation: none;
+}

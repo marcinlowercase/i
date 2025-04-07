@@ -1,0 +1,49 @@
+/* style.css */
+@font-face {
+  font-family: "TeX Gyre Cursor";
+  src: "./font/texgyrecursor-regular.otf" format("opentype");
+}
+:root {
+  --sans-font: "Outfit", sans-serif;
+  --serif-font: "Noto Serif", serif;
+  --mono-font: "Space Mono", monospace;
+
+  --font-size--xl: 32px;
+  --font-size--l: 24px;
+  --font-size--m: 20px;
+  --font-size--s: 16px;
+  --font-size--xs: 12px;
+
+  --line-size--thick: 12px;
+  --line-size--regular: 8px;
+  --line-size--thin: 4px;
+
+  --border-radius--regular: 24px;
+}
+
+body {
+  cursor: grabbing;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: background-color 0.5s;
+}
+
+.unselectable {
+  -webkit-user-drag: none; /* Chrome, Safari */
+  user-drag: none; /* Standard syntax */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* Standard syntax */
+}
+
+@media (max-width: 768px) {
+  div {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+}

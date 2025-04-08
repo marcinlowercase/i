@@ -5,7 +5,8 @@ const createDynamicGrid = () => {
   gridLayout.style.display = "grid";
 
   const column = 5;
-  const gapSize = 10;
+  const gapSize = document.documentElement.clientWidth * 0.007;
+  console.log("GAP SIZE", gapSize);
   const gridSide =
     (document.documentElement.clientWidth - (column - 1) * gapSize) / column;
 

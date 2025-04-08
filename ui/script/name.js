@@ -9,6 +9,5 @@ id("name").addEventListener("mouseenter", () => {
 });
 
 id("name").addEventListener("mouseout", () => {
-  id("name").style.background = "transparent";
-  // id("cursor").style.background = "black";
+  if (!lock) id("name").style.background = "transparent";
 });

@@ -28,74 +28,44 @@ const changeId = () => {
   }, 200);
 };
 
+let connection = [
+  {
+    icon: "link",
+    text: "resume",
+    link: "https://docs.google.com/document/d/1Zb1G7-cnQZPLSe6emyRnGTxa02sNw04VKvyczkuLDPE/edit?usp=sharing",
+  },
+  {
+    icon: "link",
+    text: "Email",
+    link: "https://www.linkedin.com/in/trannguyenhongthai/",
+  },
+  {
+    icon: "link",
+    text: "LinkedIn",
+    link: "https://www.linkedin.com/in/trannguyenhongthai/",
+  },
+  {
+    icon: "link",
+    text: "GitHub",
+    link: "https://github.com/marcinlowercase",
+  },
+];
+
 let identities = [
   {
     name: "Tran Nguyen Hong Thai",
     color: "black",
     subcolor: "#333333",
-
-    data: [
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-    ],
   },
   {
     name: "Theo",
     color: "red",
     subcolor: "#550000",
-    data: [
-      {
-        icon: "link",
-        text: "resume",
-        link: "https://docs.google.com/document/d/1Zb1G7-cnQZPLSe6emyRnGTxa02sNw04VKvyczkuLDPE/edit?usp=sharing",
-      },
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-    ],
   },
   {
     name: "marcinlowercase",
     color: "blue",
     subcolor: "#000055",
-
-    data: [
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-      {
-        icon: "link",
-        text: "link",
-        link: "link",
-      },
-    ],
   },
 ];
 let current = 0;

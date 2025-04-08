@@ -4,7 +4,7 @@ const createDynamicGrid = () => {
   gridLayout.id = "grid-layout";
   gridLayout.style.display = "grid";
 
-  const gapSize = document.documentElement.clientWidth * 0.005;
+  const gapSize = document.documentElement.clientWidth * 0.001;
   // const gapSize = 0;
   console.log("GAP SIZE", gapSize);
   const gridSide =
@@ -25,6 +25,7 @@ const createDynamicGrid = () => {
     const gridSpot = document.createElement("div");
     gridSpot.id = `grid-spot-${i}`;
     gridSpot.classList.add("grid-spot");
+    gridSpot.classList.add("unselectable");
 
     gridSpot.innerText = `${i}`;
 

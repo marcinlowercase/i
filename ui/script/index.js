@@ -59,8 +59,8 @@ let identities = [
     data: [
       {
         icon: "link",
-        text: "link",
-        link: "link",
+        text: "resume",
+        link: "https://docs.google.com/document/d/1Zb1G7-cnQZPLSe6emyRnGTxa02sNw04VKvyczkuLDPE/edit?usp=sharing",
       },
       {
         icon: "link",
@@ -103,7 +103,7 @@ let current = 0;
 const name = id("name");
 const tom = id("tom");
 
-const column = 5;
+const column = 20;
 let row = 0;
 let gridHoverStatus = [];
 
@@ -122,6 +122,6 @@ const changeGridBackground = (i = 0) => {
 
     setTimeout(() => {
       changeGridBackground(i + 1);
-    }, 30);
+    }, 1);
   }
 };

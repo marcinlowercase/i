@@ -4,13 +4,12 @@ const createDynamicGrid = () => {
   gridLayout.id = "grid-layout";
   gridLayout.style.display = "grid";
 
-  const column = 5;
   const gapSize = document.documentElement.clientWidth * 0.007;
   console.log("GAP SIZE", gapSize);
   const gridSide =
     (document.documentElement.clientWidth - (column - 1) * gapSize) / column;
 
-  const row =
+  row =
     Math.floor(
       (document.documentElement.clientHeight - (column - 1) * gapSize) /
         gridSide
@@ -33,10 +32,15 @@ const createDynamicGrid = () => {
     gridSpot.style.transition = "background 0.5s";
 
     gridSpot.addEventListener("mouseenter", () => {
+      // if (!lock && !hoverring)
       gridSpot.style.background = identities[current].color;
+      // gridSpot.style.zIndex = `${parseInt(name.style.zIndex) + 1}`;
     });
     gridSpot.addEventListener("mouseleave", () => {
-      gridSpot.style.background = "white";
+      gridSpot.style.zIndex = "5555";
+
+      if (!lock && !hoverring) gridSpot.style.background = "white";
+      else gridSpot.style.background = identities[current].subcolor;
     });
 
     gridLayout.appendChild(gridSpot);

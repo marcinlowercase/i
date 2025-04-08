@@ -10,13 +10,14 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
     return;
   }
   dvd.style.position = "absolute";
+  dvd.style.zIndex = "10000";
 
   let x = originalX;
   let y = originalY;
   let dx = 1;
   let dy = 1;
   let lastBounceTime = 0;
-  const bounceInterval = 1000;
+  const bounceInterval = 3000;
 
   let currentZoom = zoom;
   let currentSpeed = speed;
@@ -31,7 +32,7 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
 
   dvd.addEventListener("mousedown", () => {});
 
-  function moveDVD() {
+  const moveDVD = () => {
     const maxX = document.documentElement.clientWidth - dvd.clientWidth;
     const maxY = document.documentElement.clientHeight - dvd.clientHeight;
 
@@ -62,7 +63,9 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
     if (bounced) {
       const currentTime = Date.now();
       if (currentTime - lastBounceTime >= bounceInterval) {
-        changeId(); // Call changeId only if 1 second has passed since the last bounce
+        changeId();
+        dvd.style.zIndex = dvd.style.zIndex === "10000" ? "12321" : "10000";
+        changeGridBackground();
         lastBounceTime = currentTime;
       }
     }
@@ -70,7 +73,7 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
     dvd.style.left = `${x}px`;
     dvd.style.top = `${y}px`;
     requestAnimationFrame(moveDVD);
-  }
+  };
   moveDVD();
 };
 

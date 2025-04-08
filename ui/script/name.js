@@ -1,6 +1,7 @@
 // name.js
 id("name").addEventListener("click", () => {
   changeId();
+  changeGridBackground();
 });
 
 id("name").addEventListener("mouseenter", () => {

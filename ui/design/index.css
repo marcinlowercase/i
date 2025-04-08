@@ -1,12 +1,9 @@
-/* style.css */
-@font-face {
-  font-family: "TeX Gyre Cursor";
-  src: "./font/texgyrecursor-regular.otf" format("opentype");
-}
+/* index.css */
+
 :root {
   --sans-font: "Outfit", sans-serif;
   --serif-font: "Noto Serif", serif;
-  --mono-font: "Space Mono", monospace;
+  --mono-font: "courier-std", monospace;
 
   --font-size--xl: 32px;
   --font-size--l: 24px;
@@ -33,13 +30,13 @@ body {
 }
 
 .unselectable {
-  -webkit-user-drag: none; /* Chrome, Safari */
-  user-drag: none; /* Standard syntax */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE/Edge */
-  user-select: none; /* Standard syntax */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by most modern browsers */
 }
-
 @media (max-width: 768px) {
   div {
     -webkit-tap-highlight-color: transparent;

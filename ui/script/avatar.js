@@ -8,6 +8,7 @@ id("tom").addEventListener("mouseover", (e) => {
 });
 id("tom").addEventListener("mouseout", (e) => {
   hoverring = false;
+  id("name").style.zIndex = "10000";
   id("cursor").style.opacity = "1";
 
   if (!lock) {

@@ -1,4 +1,12 @@
 /* grid.css */
-#grid-layout {
-  /* display: none !important; */
+
+.grid-spot {
+  align-items: center;
+  background-color: white;
+  color: white;
+  display: flex;
+  font-family: var(--mono-font);
+  font-size: var(--font-size--xl);
+  justify-content: center;
+  transition: background 0.5s;
 }

@@ -8,15 +8,15 @@ let hoverring = false;
 
 const changeId = () => {
   id("name").style.opacity = "0";
-  if (current < identities.length - 1)
-    id("name").innerText = identities[++current].name;
-  else {
-    id("name").innerText = identities[0].name;
-    current = 0;
-  }
+
   document.title = identities[current].name;
+  current++;
+
+  if (current >= identities.length) current = 0;
 
   setTimeout(() => {
+    id("name").innerText = identities[current].name;
+
     const background =
       lock || hoverring ? identities[current].color : "transparent";
     id("name").style.background = background;
@@ -24,8 +24,8 @@ const changeId = () => {
 
     setTimeout(() => {
       id("name").style.opacity = "1";
-    }, 100);
-  }, 100);
+    }, 200);
+  }, 200);
 };
 
 let identities = [
@@ -105,14 +105,19 @@ const tom = id("tom");
 
 const column = 5;
 let row = 0;
+let gridHoverStatus = [];
 
 const changeGridBackground = (i = 0) => {
   const totalSpots = column * row;
   if (i < totalSpots) {
-    const gridSpot = document.getElementById(`grid-spot-${i}`); // Use document.getElementById
+    const gridSpot = document.getElementById(`grid-spot-${i}`);
     if (gridSpot) {
-      gridSpot.style.background =
-        hoverring || lock ? identities[current].subcolor : "white";
+      if (!gridHoverStatus[i]) {
+        gridSpot.style.background =
+          hoverring || lock ? identities[current].subcolor : "white";
+      } else {
+        gridSpot.style.background = identities[current].color;
+      }
     }
 
     setTimeout(() => {

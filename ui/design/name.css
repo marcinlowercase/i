@@ -11,7 +11,7 @@
   left: 0;
   padding: var(--line-size--thick);
   position: absolute;
-  transition: background 0.5s, opacity 100ms, all 0.5s, width 0.5s;
+  transition: background 0.5s, opacity 200ms, all 0.5s, width 0.5s;
   width: fit-content;
 }
 #name:hover {

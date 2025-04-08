@@ -4,7 +4,8 @@ const createDynamicGrid = () => {
   gridLayout.id = "grid-layout";
   gridLayout.style.display = "grid";
 
-  const gapSize = document.documentElement.clientWidth * 0.007;
+  const gapSize = document.documentElement.clientWidth * 0.005;
+  // const gapSize = 0;
   console.log("GAP SIZE", gapSize);
   const gridSide =
     (document.documentElement.clientWidth - (column - 1) * gapSize) / column;
@@ -15,8 +16,8 @@ const createDynamicGrid = () => {
         gridSide
     ) + 1;
 
-  console.log("gridSide ", gridSide);
-  console.log(`${column} x ${row}`);
+  // console.log("gridSide ", gridSide);
+  // console.log(`${column} x ${row}`);
   gridLayout.style.gridTemplateColumns = `repeat(${column}, ${gridSide}px)`;
   gridLayout.style.gridTemplateRows = `repeat(${row}, ${gridSide}px)`;
   gridLayout.style.gap = `${gapSize}px`;
@@ -25,18 +26,16 @@ const createDynamicGrid = () => {
     gridSpot.id = `grid-spot-${i}`;
     gridSpot.classList.add("grid-spot");
 
-    gridSpot.style.background = "white";
-    gridSpot.style.display = "flex";
-    gridSpot.style.justifyContent = "center";
-    gridSpot.style.alignItems = "center";
-    gridSpot.style.transition = "background 0.5s";
+    gridSpot.innerText = `${i}`;
 
     gridSpot.addEventListener("mouseenter", () => {
       // if (!lock && !hoverring)
       gridSpot.style.background = identities[current].color;
       // gridSpot.style.zIndex = `${parseInt(name.style.zIndex) + 1}`;
+      gridHoverStatus[i] = true;
     });
     gridSpot.addEventListener("mouseleave", () => {
+      gridHoverStatus[i] = false;
       gridSpot.style.zIndex = "5555";
 
       if (!lock && !hoverring) gridSpot.style.background = "white";

@@ -64,7 +64,11 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
       const currentTime = Date.now();
       if (currentTime - lastBounceTime >= bounceInterval) {
         changeId();
-        dvd.style.zIndex = dvd.style.zIndex === "10000" ? "12321" : "10000";
+        if (lock || hoverring)
+          dvd.style.zIndex = dvd.style.zIndex === "10000" ? "12321" : "10000";
+        else {
+          dvd.style.zIndex = "10000";
+        }
         changeGridBackground();
         lastBounceTime = currentTime;
       }
@@ -77,4 +81,4 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
   moveDVD();
 };
 
-startDVDBounce("name", 0, 0, 1, 2);
+startDVDBounce("name", 0, 0, 1, 3);

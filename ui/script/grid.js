@@ -27,7 +27,7 @@ const createDynamicGrid = () => {
     gridSpot.classList.add("grid-spot");
     gridSpot.classList.add("unselectable");
 
-    gridSpot.innerText = `${i}`;
+    // gridSpot.innerText = `${i}`;
 
     gridSpot.addEventListener("mouseenter", () => {
       // if (!lock && !hoverring)
@@ -43,6 +43,29 @@ const createDynamicGrid = () => {
       else gridSpot.style.background = identities[current].subcolor;
     });
 
+    // connection
+    if (i < connection.length) {
+      gridSpot.innerHTML = `
+        <div class='grid-content'><a href="${connection[i].link}" target="_blank">
+          <img src="${connection[i].icon}" alt="${connection[i].text}" title="${connection[i].text}" class="connection" />
+        </a>
+        </div>
+        
+      `;
+      gridSpot.style.borderRadius = "50%";
+    } else if (i === column) {
+      gridSpot.innerText = "i";
+      gridSpot.classList.add("info");
+    } else if (i === connection.length) {
+    } else {
+      gridSpot.innerHTML = `
+        <div class='grid-content'><a href="${connection[i].link}" target="_blank">
+          <img src="${connection[i].icon}" alt="${connection[i].text}" title="${connection[i].text}" class="connection" />
+        </a>
+        </div>
+        
+      `;
+    }
     gridLayout.appendChild(gridSpot);
   }
 

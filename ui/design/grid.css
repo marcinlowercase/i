@@ -8,5 +8,31 @@
   font-family: var(--mono-font);
   font-size: var(--font-size--xs);
   justify-content: center;
+  flex-direction: column;
   transition: background 0.5s;
+}
+
+.grid-content {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  overflow: hidden;
+}
+
+.grid-content > a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.connection {
+  width: 35%;
+  height: 35%;
+  object-fit: cover; /* or "contain" depending on your use case */
+}
+
+.info {
+  font-size: var(--font-size--m);
 }

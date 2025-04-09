@@ -55,67 +55,67 @@ let interesting = [
     icon: "../data/img/archlinux.svg",
     text: "archlinux",
     link: "https://archlinux.org/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/deno.svg",
     text: "deno",
     link: "https://deno.com/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/rust.svg",
     text: "rust",
     link: "https://www.rust-lang.org/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/figma.svg",
     text: "figma",
     link: "https://www.figma.com/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/google.svg",
     text: "google",
     link: "https://www.google.com/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/zig.svg",
     text: "zig",
     link: "https://ziglang.org/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/tldraw.svg",
     text: "tldraw",
     link: "https://www.tldraw.com/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/excalidraw.svg",
     text: "excalidraw",
     link: "https://excalidraw.com/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/vim.svg",
     text: "vim",
     link: "https://www.vim.org/",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/c.svg",
     text: "c",
     link: "#",
-	  index: 0;
+	  index: 0,
   },
   {
     icon: "../data/img/javascript.svg",
     text: "javascript",
     link: "#",
-	  index: 0;
+	  index: 0,
   },
 ];
 

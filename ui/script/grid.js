@@ -76,7 +76,7 @@ const createDynamicGrid = () => {
 
 const grid = createDynamicGrid();
 
-function handleResize() {
+const handleResize = () => {
   const existingGrid = id("grid-layout");
   if (existingGrid) {
     console.log("remove old");

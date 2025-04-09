@@ -55,67 +55,67 @@ let interesting = [
     icon: "../data/img/archlinux.svg",
     text: "archlinux",
     link: "https://archlinux.org/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/deno.svg",
     text: "deno",
     link: "https://deno.com/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/rust.svg",
     text: "rust",
     link: "https://www.rust-lang.org/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/figma.svg",
     text: "figma",
     link: "https://www.figma.com/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/google.svg",
     text: "google",
     link: "https://www.google.com/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/zig.svg",
     text: "zig",
     link: "https://ziglang.org/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/tldraw.svg",
     text: "tldraw",
     link: "https://www.tldraw.com/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/excalidraw.svg",
     text: "excalidraw",
     link: "https://excalidraw.com/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/vim.svg",
     text: "vim",
     link: "https://www.vim.org/",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/c.svg",
     text: "c",
     link: "#",
-	  index: 0,
+    index: 0,
   },
   {
     icon: "../data/img/javascript.svg",
     text: "javascript",
     link: "#",
-	  index: 0,
+    index: 0,
   },
 ];
 
@@ -141,7 +141,7 @@ let current = 0;
 const name = id("name");
 const tom = id("tom");
 
-const column = 11;
+const column = 15;
 let row = 0;
 
 let gridHoverStatus = [];
@@ -162,5 +162,23 @@ const changeGridBackground = (i = 0) => {
     setTimeout(() => {
       changeGridBackground(i + 1);
     }, 1);
+  }
+};
+const availableSpot = (start, end, exclusion) => {
+  let availableSpots = [];
+  for (let i = start; i <= end; i++) {
+    if (i !== exclusion) {
+      availableSpots.push(i);
+    }
+  }
+  return availableSpots;
+};
+
+const randomSpot = (availableSpots) => {
+  for (let i = 0; i < interesting.length; i++) {
+    randomIndex = Math.floor(Math.random() * availableSpots.length);
+    console.log(randomIndex);
+    interesting[i].index = availableSpots[randomIndex];
+    availableSpots.splice(randomIndex, 1);
   }
 };

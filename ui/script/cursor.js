@@ -1,6 +1,7 @@
 const cursor = id("cursor");
 // Update cursor position on mouse move
 document.addEventListener("mousemove", (e) => {
+  cursor.style.opacity = "1";
   cursor.style.left = `${e.clientX}px`;
   cursor.style.top = `${e.clientY}px`;
 });

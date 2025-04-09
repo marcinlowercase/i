@@ -15,24 +15,20 @@ const createDynamicGrid = () => {
       (document.documentElement.clientHeight - (column - 1) * gapSize) /
         gridSide
     ) + 1;
-
-  // console.log("gridSide ", gridSide);
-  // console.log(`${column} x ${row}`);
   gridLayout.style.gridTemplateColumns = `repeat(${column}, ${gridSide}px)`;
   gridLayout.style.gridTemplateRows = `repeat(${row}, ${gridSide}px)`;
   gridLayout.style.gap = `${gapSize}px`;
+  const availableSpots = availableSpot(connection.length, column * row, column);
+  randomSpot(availableSpots);
   for (let i = 0; i < column * row; i++) {
     const gridSpot = document.createElement("div");
     gridSpot.id = `grid-spot-${i}`;
     gridSpot.classList.add("grid-spot");
     gridSpot.classList.add("unselectable");
-
-    // gridSpot.innerText = `${i}`;
+    gridSpot.innerText = `${i}`;
 
     gridSpot.addEventListener("mouseenter", () => {
-      // if (!lock && !hoverring)
       gridSpot.style.background = identities[current].color;
-      // gridSpot.style.zIndex = `${parseInt(name.style.zIndex) + 1}`;
       gridHoverStatus[i] = true;
     });
     gridSpot.addEventListener("mouseleave", () => {
@@ -46,24 +42,38 @@ const createDynamicGrid = () => {
     // connection
     if (i < connection.length) {
       gridSpot.innerHTML = `
-        <div class='grid-content'><a href="${connection[i].link}" target="_blank">
-          <img src="${connection[i].icon}" alt="${connection[i].text}" title="${connection[i].text}" class="connection" />
+        <div class="grid-content">
+        <a href="${connection[i].link}" target="_blank">
+          <img
+            src="${connection[i].icon}"
+            alt="${connection[i].text}"
+            title="${connection[i].text}"
+            class="connection"
+          />
         </a>
-        </div>
-        
+      </div>
       `;
       gridSpot.style.borderRadius = "50%";
     } else if (i === column) {
       gridSpot.innerText = "i";
       gridSpot.classList.add("info");
-    } else if (i === connection.length) {
     } else {
-      // gridSpot.innerHTML = `
-      //   <div class='grid-content'><a href="${connection[i].link}" target="_blank">
-      //     <img src="${connection[i].icon}" alt="${connection[i].text}" title="${connection[i].text}" class="connection" />
-      //   </a>
-      //   </div>
-      // `;
+      for (let j = 0; j < interesting.length; j++) {
+        if (i === interesting[j].index) {
+          gridSpot.innerHTML = `
+            <div class="grid-content">
+              <a href="${interesting[j].link}" target="_blank">
+               <img
+                  src="${interesting[j].icon}"
+                  alt="${interesting[j].text}"
+                  title="${interesting[j].text}"
+                  class="interesting"
+                />
+              </a>
+            </div>
+          `;
+        }
+      }
     }
     gridLayout.appendChild(gridSpot);
   }

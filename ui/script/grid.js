@@ -58,13 +58,12 @@ const createDynamicGrid = () => {
       gridSpot.classList.add("info");
     } else if (i === connection.length) {
     } else {
-      gridSpot.innerHTML = `
-        <div class='grid-content'><a href="${connection[i].link}" target="_blank">
-          <img src="${connection[i].icon}" alt="${connection[i].text}" title="${connection[i].text}" class="connection" />
-        </a>
-        </div>
-        
-      `;
+      // gridSpot.innerHTML = `
+      //   <div class='grid-content'><a href="${connection[i].link}" target="_blank">
+      //     <img src="${connection[i].icon}" alt="${connection[i].text}" title="${connection[i].text}" class="connection" />
+      //   </a>
+      //   </div>
+      // `;
     }
     gridLayout.appendChild(gridSpot);
   }
@@ -83,6 +82,6 @@ const handleResize = () => {
     existingGrid.remove();
   }
   createDynamicGrid();
-}
+};
 
 window.addEventListener("resize", handleResize);

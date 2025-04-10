@@ -60,6 +60,7 @@ const createGridLayout = () => {
       `;
       gridSpot.style.borderRadius = "50%";
     } else if (i === column - 1) {
+      ///// info
       gridSpot.innerText = "i";
       gridSpot.classList.add("info");
 
@@ -74,17 +75,24 @@ const createGridLayout = () => {
           document.querySelectorAll(".interesting").forEach((el) => {
             el.style.opacity = "0";
           });
+
           id("greeting").style.opacity = "1";
-          if (infoShowing)
-            typeWriterEffect("greeting", `i am theo,`, 100, () => {
-              typeWriterEffect("greetingone", `a programmer`, 100);
-            });
+          id("greetingone").style.opacity = "1";
+          if (!greetingShowing) {
+            if (infoShowing)
+              typeWriterEffect("greeting", `I am Theo,`, 100, () => {
+                typeWriterEffect("greetingone", `a Programmer`, 100);
+              });
+            greetingShowing = true;
+          }
+
           id("name").innerText = "just a placeholder";
           id("name").style.background = "white";
         }
       });
       gridSpot.addEventListener("mouseout", () => {
         infoShowing = false;
+
         changeGridBackground("transparent");
         document.body.style.background = lock ? "black" : "white";
         id("transparent_tom").style.opacity = "1";
@@ -94,8 +102,11 @@ const createGridLayout = () => {
           el.style.opacity = "1";
         });
         id("greeting").style.opacity = "0";
+        id("greetingone").style.opacity = "0";
         id("name").innerText = identities[current].name;
-        id("name").style.background = identities[current].color;
+        id("name").style.background = lock
+          ? identities[current].color
+          : "transparent";
       });
       // gridSpot.style.width = "50%";
       // gridSpot.style.height = "50%";
@@ -142,7 +153,6 @@ const recreateGridLayout = () => {
   if (existingGrid) {
     existingGrid.style.opacity = "0";
     setTimeout(() => {
-      console.log("remove old");
       existingGrid.remove();
       createGridLayout();
     }, 500);

@@ -75,6 +75,7 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
 
         if (infoShowing)
           document.body.style.background = identities[current].color;
+
         lastBounceTime = currentTime;
       }
     }

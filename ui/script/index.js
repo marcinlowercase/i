@@ -228,7 +228,7 @@ const randomSpot = (availableSpots) => {
 };
 
 // id("name-span").innerText = identities[current].name;
-let isTyping = false;
+let greetingShowing = false;
 const typeWriterEffect = (divId, text, speed, callback) => {
   const divElement = document.getElementById(divId);
   let i = 0;
@@ -244,21 +244,21 @@ const typeWriterEffect = (divId, text, speed, callback) => {
       i++;
       setTimeout(type, speed);
     } else {
-      isTyping = false; // Reset the flag when typing is complete
+      // greetingShowing = false; // Reset the flag when typing is complete
       if (typeof callback === "function") {
         callback();
       }
     }
   };
 
-  // Check if the function is already active
-  if (isTyping) {
-    console.warn(`Typewriter effect for "${divId}" is already in progress.`);
-    return; // Exit the function if it's already running
-  }
-
-  // Set the flag to indicate that the function is now active
-  isTyping = true;
+  // if (greetingShowing) {
+  //   console.warn(`Typewriter effect for "${divId}" is already in progress.`);
+  //   return; // Exit the function if it's already running
+  // }
+  // greetingShowing = true;
   divElement.innerHTML = "";
   type();
+};
+const removeElementContent = (element) => {
+  element.innerHTML = "";
 };

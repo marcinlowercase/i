@@ -64,6 +64,7 @@ const createGridLayout = () => {
       gridSpot.classList.add("info");
 
       gridSpot.addEventListener("mouseenter", () => {
+        infoShowing = true;
         changeGridBackground(identities[current].color);
         document.body.style.background = identities[current].color;
         id("transparent_tom").style.opacity = "0";
@@ -74,6 +75,7 @@ const createGridLayout = () => {
         });
       });
       gridSpot.addEventListener("mouseout", () => {
+        infoShowing = false;
         changeGridBackground("transparent");
         document.body.style.background = lock ? "black" : "white";
         id("transparent_tom").style.opacity = "1";
@@ -110,7 +112,8 @@ const createGridLayout = () => {
   document.body.appendChild(gridLayout);
   setTimeout(() => {
     gridLayout.style.opacity = "1";
-    if (lock || hoverring) document.body.style.background = "black";
+    if ((lock || hoverring) && !infoShowing)
+      document.body.style.background = "black";
   }, 500);
 
   return gridLayout;

@@ -164,6 +164,7 @@ const iSpot = column - 1;
 let row = 0;
 
 let gridHoverStatus = [];
+let infoShowing = false;
 
 const changeGridBackground = (color, i = 0) => {
   const totalSpots = column * row;

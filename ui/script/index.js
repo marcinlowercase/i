@@ -225,3 +225,28 @@ const randomSpot = (availableSpots) => {
 };
 
 id("name-span").innerText = identities[current].name;
+
+const typeWriterEffect = (divId, text, speed, callback) => {
+  const divElement = document.getElementById(divId);
+  let i = 0;
+
+  if (!divElement) {
+    console.error(`Element with ID "${divId}" not found.`);
+    return;
+  }
+
+  const type = () => {
+    if (i < text.length) {
+      divElement.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      if (typeof callback === "function") {
+        callback();
+      }
+    }
+  };
+
+  divElement.innerHTML = "";
+  type();
+};

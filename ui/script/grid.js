@@ -74,6 +74,7 @@ const createGridLayout = () => {
           el.style.opacity = "0";
         });
         id("greeting").style.opacity = "1";
+        if (infoShowing) typeWriterEffect("greeting", `I am Theo`, 100);
         id("name").innerText = "just a placeholder";
         id("name").style.background = "white";
       });

@@ -1,7 +1,7 @@
 // name.js
 id("name").addEventListener("click", () => {
   changeId();
-  changeGridBackground();
+  // changeGridBackground();
 });
 
 id("name").addEventListener("mouseenter", () => {
@@ -11,4 +11,6 @@ id("name").addEventListener("mouseenter", () => {
 
 id("name").addEventListener("mouseout", () => {
   if (!lock) id("name").style.background = "transparent";
+  // id("name").style.zIndex =
+  //   id("name").style.zIndex === "10000" ? "12321" : "10000";
 });

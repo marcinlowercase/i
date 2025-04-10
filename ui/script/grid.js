@@ -1,11 +1,14 @@
 // grid.js
-const createDynamicGrid = () => {
+const createGridLayout = () => {
   const gridLayout = document.createElement("div");
+  gridLayout.style.opacity = "0";
+  // document.body.style.background = "white";
+
   gridLayout.id = "grid-layout";
   gridLayout.style.display = "grid";
 
-  const gapSize = document.documentElement.clientWidth * 0.001;
-  // const gapSize = 0;
+  // const gapSize = document.documentElement.clientWidth * 0.001;
+  const gapSize = 0;
   // console.log("GAP SIZE", gapSize);
   const gridSide =
     (document.documentElement.clientWidth - (column - 1) * gapSize) / column;
@@ -25,24 +28,26 @@ const createDynamicGrid = () => {
     gridSpot.id = `grid-spot-${i}`;
     gridSpot.classList.add("grid-spot");
     gridSpot.classList.add("unselectable");
+
     // gridSpot.innerText = `${i}`;
 
     gridSpot.addEventListener("mouseenter", () => {
-      gridSpot.style.background = identities[current].color;
+      gridSpot.style.background = identities[current].subcolor;
       gridHoverStatus[i] = true;
     });
     gridSpot.addEventListener("mouseleave", () => {
       gridHoverStatus[i] = false;
       gridSpot.style.zIndex = "5555";
 
-      if (!lock && !hoverring) gridSpot.style.background = "white";
-      else gridSpot.style.background = identities[current].subcolor;
+      gridSpot.style.background = "transparent";
+      // if (!lock && !hoverring) gridSpot.style.background = "transparent";
+      // else gridSpot.style.background = identities[current].subcolor;
     });
 
     // connection
     if (i < connection.length) {
       gridSpot.innerHTML = `
-        <div class="grid-content">
+        <div class="grid-content connection-spot">
         <a href="${connection[i].link}" target="_blank">
           <img
             src="${connection[i].icon}"
@@ -57,6 +62,23 @@ const createDynamicGrid = () => {
     } else if (i === column - 1) {
       gridSpot.innerText = "i";
       gridSpot.classList.add("info");
+
+      gridSpot.addEventListener("mouseenter", () => {
+        changeGridBackground(identities[current].color);
+        document.body.style.background = identities[current].color;
+        id("transparent_tom").style.opacity = "0";
+        document.querySelectorAll(".interesting").forEach((el) => {
+          el.style.opacity = "0";
+        });
+      });
+      gridSpot.addEventListener("mouseout", () => {
+        changeGridBackground("transparent");
+        document.body.style.background = lock ? "black" : "white";
+        id("transparent_tom").style.opacity = "1";
+        document.querySelectorAll(".interesting").forEach((el) => {
+          el.style.opacity = "1";
+        });
+      });
       // gridSpot.style.width = "50%";
       // gridSpot.style.height = "50%";
       // gridSpot.style.right = "0";
@@ -82,19 +104,29 @@ const createDynamicGrid = () => {
   }
 
   document.body.appendChild(gridLayout);
+  setTimeout(() => {
+    gridLayout.style.opacity = "1";
+    if (lock || hoverring) document.body.style.background = "black";
+  }, 500);
 
   return gridLayout;
 };
 
-const grid = createDynamicGrid();
+const grid = createGridLayout();
 
-const handleResize = () => {
+const recreateGridLayout = () => {
   const existingGrid = id("grid-layout");
+
   if (existingGrid) {
-    console.log("remove old");
-    existingGrid.remove();
+    existingGrid.style.opacity = "0";
+    setTimeout(() => {
+      console.log("remove old");
+      existingGrid.remove();
+      createGridLayout();
+    }, 500);
   }
-  createDynamicGrid();
+
+  console.log("recreate");
 };
 
-window.addEventListener("resize", handleResize);
+window.addEventListener("resize", recreateGridLayout);

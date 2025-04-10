@@ -3,7 +3,7 @@
 #cursor {
   width: 30vh;
   height: 30vh;
-  background-color: black;
+  /* background-color: black; */
   border-radius: 50%;
   opacity: 0;
   position: absolute;

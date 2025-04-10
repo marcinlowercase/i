@@ -1,8 +1,13 @@
 /* grid.css */
 
+#grid-layout {
+  transition: opacity 0.5s;
+}
+
 .grid-spot {
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
+  background-color: transparent;
   color: white;
   display: flex;
   font-family: var(--mono-font);
@@ -40,4 +45,8 @@
 
 .info {
   font-size: var(--font-size--m);
+  border: solid white 5px;
+  border-bottom-left-radius: 50%;
+  /* border-bottom-right-radius: 50%; */
+  /* border-top-left-radius: 50%; */
 }

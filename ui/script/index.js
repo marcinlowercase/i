@@ -140,7 +140,7 @@ let interesting = [
 let identities = [
   {
     name: "Tran Nguyen Hong Thai",
-    color: "black",
+    color: "#777777",
     subcolor: "#333333",
   },
   {
@@ -165,7 +165,27 @@ let row = 0;
 
 let gridHoverStatus = [];
 
-const changeGridBackground = (i = 0) => {
+const changeGridBackground = (color, i = 0) => {
+  const totalSpots = column * row;
+  if (i < totalSpots) {
+    const gridSpot = document.getElementById(`grid-spot-${i}`);
+    if (gridSpot) {
+      gridSpot.style.background = color;
+      // if (!gridHoverStatus[i]) {
+      //   gridSpot.style.background =
+      //     hoverring || lock ? identities[current].subcolor : "white";
+      // } else {
+      //   gridSpot.style.background = identities[current].color;
+      // }
+    }
+
+    setTimeout(() => {
+      changeGridBackground(color, i + 1);
+    }, 1);
+  }
+};
+
+const changeGridBackgroundColor = (i = 0) => {
   const totalSpots = column * row;
   if (i < totalSpots) {
     const gridSpot = document.getElementById(`grid-spot-${i}`);

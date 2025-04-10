@@ -4,6 +4,7 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.opacity = "1";
   cursor.style.left = `${e.clientX}px`;
   cursor.style.top = `${e.clientY}px`;
+  cursor.style.background = identities[current].color;
 });
 
 // Listen for double-click event on the cursor

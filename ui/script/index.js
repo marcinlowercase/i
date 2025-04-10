@@ -16,6 +16,7 @@ const changeId = () => {
 
   setTimeout(() => {
     id("name").innerText = identities[current].name;
+    id("name-span").innerText = identities[current].name;
 
     const background =
       lock || hoverring ? identities[current].color : "transparent";
@@ -222,3 +223,5 @@ const randomSpot = (availableSpots) => {
     availableSpots.splice(randomIndex, 1);
   }
 };
+
+id("name-span").innerText = identities[current].name;

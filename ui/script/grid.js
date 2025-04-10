@@ -73,6 +73,9 @@ const createGridLayout = () => {
         document.querySelectorAll(".interesting").forEach((el) => {
           el.style.opacity = "0";
         });
+        id("greeting").style.opacity = "1";
+        id("name").innerText = "just a placeholder";
+        id("name").style.background = "white";
       });
       gridSpot.addEventListener("mouseout", () => {
         infoShowing = false;
@@ -84,11 +87,15 @@ const createGridLayout = () => {
         document.querySelectorAll(".interesting").forEach((el) => {
           el.style.opacity = "1";
         });
+        id("greeting").style.opacity = "0";
+        id("name").innerText = identities[current].name;
+        id("name").style.background = identities[current].color;
       });
       // gridSpot.style.width = "50%";
       // gridSpot.style.height = "50%";
       // gridSpot.style.right = "0";
     } else {
+      ///// interesting
       for (let j = 0; j < interesting.length; j++) {
         if (i === interesting[j].index) {
           gridSpot.innerHTML = `
@@ -99,6 +106,8 @@ const createGridLayout = () => {
                   alt="${interesting[j].text}"
                   title="${interesting[j].text}"
                   class="interesting"
+                  style="opacity: ${infoShowing ? "0" : "1"}"
+                  
                 />
               </a>
             </div>

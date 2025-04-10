@@ -36,11 +36,13 @@
   width: 50%;
   height: 50%;
   object-fit: cover;
+  transition: opacity 0.5s;
 }
 .interesting {
   width: 30%;
   height: 30%;
   object-fit: cover;
+  transition: opacity 0.5s;
 }
 
 .info {

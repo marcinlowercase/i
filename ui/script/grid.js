@@ -67,6 +67,8 @@ const createGridLayout = () => {
         changeGridBackground(identities[current].color);
         document.body.style.background = identities[current].color;
         id("transparent_tom").style.opacity = "0";
+        if (lock) id("tom").style.opacity = "0";
+
         document.querySelectorAll(".interesting").forEach((el) => {
           el.style.opacity = "0";
         });
@@ -75,6 +77,8 @@ const createGridLayout = () => {
         changeGridBackground("transparent");
         document.body.style.background = lock ? "black" : "white";
         id("transparent_tom").style.opacity = "1";
+        if (lock) id("tom").style.opacity = "1";
+
         document.querySelectorAll(".interesting").forEach((el) => {
           el.style.opacity = "1";
         });

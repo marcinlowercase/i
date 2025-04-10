@@ -25,7 +25,7 @@ const createDynamicGrid = () => {
     gridSpot.id = `grid-spot-${i}`;
     gridSpot.classList.add("grid-spot");
     gridSpot.classList.add("unselectable");
-    gridSpot.innerText = `${i}`;
+    // gridSpot.innerText = `${i}`;
 
     gridSpot.addEventListener("mouseenter", () => {
       gridSpot.style.background = identities[current].color;
@@ -54,9 +54,12 @@ const createDynamicGrid = () => {
       </div>
       `;
       gridSpot.style.borderRadius = "50%";
-    } else if (i === column) {
+    } else if (i === column - 1) {
       gridSpot.innerText = "i";
       gridSpot.classList.add("info");
+      // gridSpot.style.width = "50%";
+      // gridSpot.style.height = "50%";
+      // gridSpot.style.right = "0";
     } else {
       for (let j = 0; j < interesting.length; j++) {
         if (i === interesting[j].index) {

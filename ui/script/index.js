@@ -108,13 +108,31 @@ let interesting = [
   {
     icon: "../data/img/c.svg",
     text: "c",
-    link: "#",
+    link: "https://www.google.com/search?q=The+C+Programming+Language&sca_esv=242238691926b20a&sxsrf=AHTn8zqJl_uKnGdxTPEdh9gA0L8wcExJiA%3A1744243070841&ei=fgn3Z7qKM-urptQPiZyg2Aw&ved=0ahUKEwi6wY7lk8yMAxXrlYkEHQkOCMsQ4dUDCBA&uact=5&oq=The+C+Programming+Language&gs_lp=Egxnd3Mtd2l6LXNlcnAiGlRoZSBDIFByb2dyYW1taW5nIExhbmd1YWdlMgoQIxiABBgnGIoFMgoQIxiABBgnGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgoQLhiABBhDGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAAGIAESNUpUABY4CVwAXgBkAEAmAF7oAHEE6oBBDIxLja4AQPIAQD4AQGYAhygAuEUwgIEECMYJ8ICEBAAGIAEGLEDGEMYgwEYigXCAgoQABiABBgUGIcCwgIOEC4YgAQYsQMY0QMYxwHCAgsQLhiABBixAxiDAcICDhAuGIAEGMcBGI4FGK8BwgILEC4YgAQYxwEYrwHCAgUQLhiABMICCBAuGIAEGNQCwgIHEAAYgAQYCsICBxAjGLACGCfCAgoQLhiABBjUAhgNwgIHEAAYgAQYDcICBxAuGIAEGA2YAwCSBwUxOC4xMKAHpdQDsgcFMTcuMTC4B9sU&sclient=gws-wiz-serp",
     index: 0,
   },
   {
     icon: "../data/img/javascript.svg",
     text: "javascript",
-    link: "#",
+    link: "https://javascript.tm/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/idx.svg",
+    text: "idx",
+    link: "https://idx.google.com/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/github.svg",
+    text: "github",
+    link: "https://github.com/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/fedora.svg",
+    text: "fedora",
+    link: "https://fedoraproject.org/",
     index: 0,
   },
 ];
@@ -141,7 +159,8 @@ let current = 0;
 const name = id("name");
 const tom = id("tom");
 
-const column = 15;
+const column = 13;
+const iSpot = column - 1;
 let row = 0;
 
 let gridHoverStatus = [];

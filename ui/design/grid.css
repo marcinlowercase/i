@@ -27,11 +27,15 @@
   height: 100%;
 }
 
-.connection,
+.connection {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
 .interesting {
-  width: 35%;
-  height: 35%;
-  object-fit: cover; /* or "contain" depending on your use case */
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
 }
 
 .info {

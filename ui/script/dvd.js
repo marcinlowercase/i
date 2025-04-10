@@ -73,6 +73,8 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
         }
         // changeGridBackground();
 
+        if (infoShowing)
+          document.body.style.background = identities[current].color;
         lastBounceTime = currentTime;
       }
     }

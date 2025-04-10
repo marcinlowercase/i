@@ -15,11 +15,14 @@ const changeId = () => {
   if (current >= identities.length) current = 0;
 
   setTimeout(() => {
-    id("name").innerText = identities[current].name;
-    id("name-span").innerText = identities[current].name;
+    id("name").innerText = infoShowing
+      ? "just a placeholder"
+      : identities[current].name;
+    // id("name-span").innerHTML = identities[current].name;
 
-    const background =
+    let background =
       lock || hoverring ? identities[current].color : "transparent";
+    if (infoShowing) background = "white";
     id("name").style.background = background;
     id("cursor").style.background = identities[current].color;
 
@@ -224,8 +227,8 @@ const randomSpot = (availableSpots) => {
   }
 };
 
-id("name-span").innerText = identities[current].name;
-
+// id("name-span").innerText = identities[current].name;
+let isTyping = false;
 const typeWriterEffect = (divId, text, speed, callback) => {
   const divElement = document.getElementById(divId);
   let i = 0;
@@ -241,12 +244,21 @@ const typeWriterEffect = (divId, text, speed, callback) => {
       i++;
       setTimeout(type, speed);
     } else {
+      isTyping = false; // Reset the flag when typing is complete
       if (typeof callback === "function") {
         callback();
       }
     }
   };
 
+  // Check if the function is already active
+  if (isTyping) {
+    console.warn(`Typewriter effect for "${divId}" is already in progress.`);
+    return; // Exit the function if it's already running
+  }
+
+  // Set the flag to indicate that the function is now active
+  isTyping = true;
   divElement.innerHTML = "";
   type();
 };

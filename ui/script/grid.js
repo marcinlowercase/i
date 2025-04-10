@@ -64,19 +64,24 @@ const createGridLayout = () => {
       gridSpot.classList.add("info");
 
       gridSpot.addEventListener("mouseenter", () => {
-        infoShowing = true;
-        changeGridBackground(identities[current].color);
-        document.body.style.background = identities[current].color;
-        id("transparent_tom").style.opacity = "0";
-        if (lock) id("tom").style.opacity = "0";
+        if (!infoShowing) {
+          infoShowing = true;
+          changeGridBackground(identities[current].color);
+          document.body.style.background = identities[current].color;
+          id("transparent_tom").style.opacity = "0";
+          if (lock) id("tom").style.opacity = "0";
 
-        document.querySelectorAll(".interesting").forEach((el) => {
-          el.style.opacity = "0";
-        });
-        id("greeting").style.opacity = "1";
-        if (infoShowing) typeWriterEffect("greeting", `I am Theo`, 100);
-        id("name").innerText = "just a placeholder";
-        id("name").style.background = "white";
+          document.querySelectorAll(".interesting").forEach((el) => {
+            el.style.opacity = "0";
+          });
+          id("greeting").style.opacity = "1";
+          if (infoShowing)
+            typeWriterEffect("greeting", `i am theo,`, 100, () => {
+              typeWriterEffect("greetingone", `a programmer`, 100);
+            });
+          id("name").innerText = "just a placeholder";
+          id("name").style.background = "white";
+        }
       });
       gridSpot.addEventListener("mouseout", () => {
         infoShowing = false;

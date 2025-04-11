@@ -184,7 +184,13 @@ let interesting = [
   {
     icon: "../data/img/sway.svg",
     text: "sway",
-    link: "  https://swaywm.org/",
+    link: "https://swaywm.org/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/monkeytype.svg",
+    text: "monkeytype",
+    link: "https://monkeytype.com/",
     index: 0,
   },
 ];

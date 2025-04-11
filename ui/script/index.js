@@ -139,6 +139,54 @@ let interesting = [
     link: "https://fedoraproject.org/",
     index: 0,
   },
+  {
+    icon: "../data/img/arm.svg",
+    text: "arm",
+    link: "https://www.arm.com/architecture",
+    index: 0,
+  },
+  {
+    icon: "../data/img/chrome.svg",
+    text: "chrome",
+    link: "https://www.google.com/intl/en_ca/chrome/canary/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/tmux.svg",
+    text: "tmux",
+    link: "https://github.com/tmux/tmux",
+    index: 0,
+  },
+  {
+    icon: "../data/img/gnome.svg",
+    text: "gnome",
+    link: "https://www.gnome.org/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/android.svg",
+    text: "android",
+    link: "https://developer.android.com/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/swift.svg",
+    text: "swift",
+    link: "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/redis.svg",
+    text: "redis",
+    link: "https://redis.io/",
+    index: 0,
+  },
+  {
+    icon: "../data/img/sway.svg",
+    text: "sway",
+    link: "  https://swaywm.org/",
+    index: 0,
+  },
 ];
 
 let identities = [

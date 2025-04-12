@@ -3,6 +3,24 @@ const id = (id) => {
   return document.getElementById(id);
 };
 
+const on_touch_device = () => {
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+};
+
+const on_device_has_mouse = () => {
+  return window.matchMedia("(pointer: fine)").matches;
+};
+
+const on_touch_only_device = () => {
+  return on_touch_device() && !on_device_has_mouse();
+};
+
+console.log("on_touch_only_device: ", on_touch_only_device());
+
 let lock = false;
 let hoverring = false;
 
@@ -275,7 +293,6 @@ const availabe_spot = (start, end, exclusion) => {
 const random_spot = (available_spots) => {
   for (let i = 0; i < interesting.length; i++) {
     random_index = Math.floor(Math.random() * available_spots.length);
-    console.log(random_index);
     interesting[i].index = available_spots[random_index];
     available_spots.splice(random_index, 1);
   }

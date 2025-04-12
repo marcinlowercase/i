@@ -15,9 +15,7 @@ const handleRequest = async (request) => {
     if (pathname === "/i") {
       filePath = join(Deno.cwd(), UI_DIRECTORY, "index.html");
     } else {
-      console.log(pathname);
       filePath = join(Deno.cwd(), UI_DIRECTORY, pathname);
-      console.log(filePath);
     }
 
     const file = await Deno.readFile(filePath);

@@ -3,4 +3,10 @@
   .big_screen {
     display: none !important;
   }
+  body {
+    background-color: black !important;
+  }
+  .info {
+    display: none;
+  }
 }

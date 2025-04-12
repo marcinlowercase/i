@@ -1,4 +1,4 @@
-/* greeting.css */
+/* i_am.css */
 
 .greeting {
   transition: opacity 0.5s;
@@ -11,10 +11,10 @@
   left: 50%;
   color: white;
 }
-#greeting {
+#i_am {
   transform: translate(-50%, -100%);
 }
 
-#greetingone {
+#a_programmer {
   transform: translate(-50%, 0%);
 }

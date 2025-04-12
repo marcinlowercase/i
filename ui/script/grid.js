@@ -1,52 +1,56 @@
 // grid.js
-const createGridLayout = () => {
-  const gridLayout = document.createElement("div");
-  gridLayout.style.opacity = "0";
+const create_grid_layout = () => {
+  const grid_layout = document.createElement("div");
+  grid_layout.style.opacity = "0";
   // document.body.style.background = "white";
 
-  gridLayout.id = "grid-layout";
-  gridLayout.style.display = "grid";
+  grid_layout.id = "grid-layout";
+  grid_layout.style.display = "grid";
 
-  // const gapSize = document.documentElement.clientWidth * 0.001;
-  const gapSize = 0;
-  // console.log("GAP SIZE", gapSize);
-  const gridSide =
-    (document.documentElement.clientWidth - (column - 1) * gapSize) / column;
+  // const gap_size = document.documentElement.clientWidth * 0.001;
+  const gap_size = 0;
+  // console.log("GAP SIZE", gap_size);
+  const grid_side =
+    (document.documentElement.clientWidth - (column - 1) * gap_size) / column;
 
   row =
     Math.floor(
-      (document.documentElement.clientHeight - (column - 1) * gapSize) /
-        gridSide
+      (document.documentElement.clientHeight - (column - 1) * gap_size) /
+        grid_side
     ) + 1;
-  gridLayout.style.gridTemplateColumns = `repeat(${column}, ${gridSide}px)`;
-  gridLayout.style.gridTemplateRows = `repeat(${row}, ${gridSide}px)`;
-  gridLayout.style.gap = `${gapSize}px`;
-  const availableSpots = availableSpot(connection.length, column * row, column);
-  randomSpot(availableSpots);
+  grid_layout.style.gridTemplateColumns = `repeat(${column}, ${grid_side}px)`;
+  grid_layout.style.gridTemplateRows = `repeat(${row}, ${grid_side}px)`;
+  grid_layout.style.gap = `${gap_size}px`;
+  const available_spots = availabe_spot(
+    connection.length,
+    column * row,
+    column
+  );
+  random_spot(available_spots);
   for (let i = 0; i < column * row; i++) {
-    const gridSpot = document.createElement("div");
-    gridSpot.id = `grid-spot-${i}`;
-    gridSpot.classList.add("grid-spot");
-    gridSpot.classList.add("unselectable");
+    const grid_spot = document.createElement("div");
+    grid_spot.id = `grid-spot-${i}`;
+    grid_spot.classList.add("grid-spot");
+    grid_spot.classList.add("unselectable");
 
-    // gridSpot.innerText = `${i}`;
+    // grid_spot.innerText = `${i}`;
 
-    gridSpot.addEventListener("mouseenter", () => {
-      gridSpot.style.background = identities[current].subcolor;
-      gridHoverStatus[i] = true;
+    grid_spot.addEventListener("mouseenter", () => {
+      grid_spot.style.background = identities[current].subcolor;
+      grid_hover_status[i] = true;
     });
-    gridSpot.addEventListener("mouseleave", () => {
-      gridHoverStatus[i] = false;
-      gridSpot.style.zIndex = "5555";
+    grid_spot.addEventListener("mouseleave", () => {
+      grid_hover_status[i] = false;
+      grid_spot.style.zIndex = "5555";
 
-      gridSpot.style.background = "transparent";
-      // if (!lock && !hoverring) gridSpot.style.background = "transparent";
-      // else gridSpot.style.background = identities[current].subcolor;
+      grid_spot.style.background = "transparent";
+      // if (!lock && !hoverring) grid_spot.style.background = "transparent";
+      // else grid_spot.style.background = identities[current].subcolor;
     });
 
     // connection
     if (i < connection.length) {
-      gridSpot.innerHTML = `
+      grid_spot.innerHTML = `
         <div class="grid-content connection-spot">
         <a href="${connection[i].link}" target="_blank">
           <img
@@ -58,16 +62,16 @@ const createGridLayout = () => {
         </a>
       </div>
       `;
-      gridSpot.style.borderRadius = "50%";
+      grid_spot.style.borderRadius = "50%";
     } else if (i === column - 1) {
       ///// info
-      gridSpot.innerText = "i";
-      gridSpot.classList.add("info");
+      grid_spot.innerText = "i";
+      grid_spot.classList.add("info");
 
-      gridSpot.addEventListener("mouseenter", () => {
-        if (!infoShowing) {
-          infoShowing = true;
-          changeGridBackground(identities[current].color);
+      grid_spot.addEventListener("mouseenter", () => {
+        if (!info_showing) {
+          info_showing = true;
+          change_grid_background(identities[current].color);
           document.body.style.background = identities[current].color;
           id("transparent_tom").style.opacity = "0";
           if (lock) id("tom").style.opacity = "0";
@@ -76,24 +80,24 @@ const createGridLayout = () => {
             el.style.opacity = "0";
           });
 
-          id("greeting").style.opacity = "1";
-          id("greetingone").style.opacity = "1";
-          if (!greetingShowing) {
-            if (infoShowing)
-              typeWriterEffect("greeting", `I am Theo,`, 100, () => {
-                typeWriterEffect("greetingone", `a Programmer`, 100);
+          id("i_am").style.opacity = "1";
+          id("a_programmer").style.opacity = "1";
+          if (!i_am_showing) {
+            if (info_showing)
+              type_writer_effect("i_am", `I am Theo,`, 100, () => {
+                type_writer_effect("a_programmer", `a Programmer`, 100);
               });
-            greetingShowing = true;
+            i_am_showing = true;
           }
 
           id("name").innerText = "just a placeholder";
           id("name").style.background = "white";
         }
       });
-      gridSpot.addEventListener("mouseout", () => {
-        infoShowing = false;
+      grid_spot.addEventListener("mouseout", () => {
+        info_showing = false;
 
-        changeGridBackground("transparent");
+        change_grid_background("transparent");
         document.body.style.background = lock ? "black" : "white";
         id("transparent_tom").style.opacity = "1";
         if (lock) id("tom").style.opacity = "1";
@@ -101,21 +105,21 @@ const createGridLayout = () => {
         document.querySelectorAll(".interesting").forEach((el) => {
           el.style.opacity = "1";
         });
-        id("greeting").style.opacity = "0";
-        id("greetingone").style.opacity = "0";
+        id("i_am").style.opacity = "0";
+        id("a_programmer").style.opacity = "0";
         id("name").innerText = identities[current].name;
         id("name").style.background = lock
           ? identities[current].color
           : "transparent";
       });
-      // gridSpot.style.width = "50%";
-      // gridSpot.style.height = "50%";
-      // gridSpot.style.right = "0";
+      // grid_spot.style.width = "50%";
+      // grid_spot.style.height = "50%";
+      // grid_spot.style.right = "0";
     } else {
       ///// interesting
       for (let j = 0; j < interesting.length; j++) {
         if (i === interesting[j].index) {
-          gridSpot.innerHTML = `
+          grid_spot.innerHTML = `
             <div class="grid-content">
               <a href="${interesting[j].link}" target="_blank">
                <img
@@ -123,7 +127,7 @@ const createGridLayout = () => {
                   alt="${interesting[j].text}"
                   title="${interesting[j].text}"
                   class="interesting"
-                  style="opacity: ${infoShowing ? "0" : "1"}"
+                  style="opacity: ${info_showing ? "0" : "1"}"
                   
                 />
               </a>
@@ -132,33 +136,33 @@ const createGridLayout = () => {
         }
       }
     }
-    gridLayout.appendChild(gridSpot);
+    grid_layout.appendChild(grid_spot);
   }
 
-  document.body.appendChild(gridLayout);
+  document.body.appendChild(grid_layout);
   setTimeout(() => {
-    gridLayout.style.opacity = "1";
-    if ((lock || hoverring) && !infoShowing)
+    grid_layout.style.opacity = "1";
+    if ((lock || hoverring) && !info_showing)
       document.body.style.background = "black";
   }, 500);
 
-  return gridLayout;
+  return grid_layout;
 };
 
-const grid = createGridLayout();
+const grid = create_grid_layout();
 
-const recreateGridLayout = () => {
+const recreate_grid_layout = () => {
   const existingGrid = id("grid-layout");
 
   if (existingGrid) {
     existingGrid.style.opacity = "0";
     setTimeout(() => {
       existingGrid.remove();
-      createGridLayout();
+      create_grid_layout();
     }, 500);
   }
 
   console.log("recreate");
 };
 
-window.addEventListener("resize", recreateGridLayout);
+window.addEventListener("resize", recreate_grid_layout);

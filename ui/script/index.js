@@ -6,7 +6,7 @@ const id = (id) => {
 let lock = false;
 let hoverring = false;
 
-const changeId = () => {
+const change_id = () => {
   id("name").style.opacity = "0";
 
   document.title = identities[current].name;
@@ -15,14 +15,14 @@ const changeId = () => {
   if (current >= identities.length) current = 0;
 
   setTimeout(() => {
-    id("name").innerText = infoShowing
+    id("name").innerText = info_showing
       ? "just a placeholder"
       : identities[current].name;
     // id("name-span").innerHTML = identities[current].name;
 
     let background =
       lock || hoverring ? identities[current].color : "transparent";
-    if (infoShowing) background = "white";
+    if (info_showing) background = "white";
     id("name").style.background = background;
     id("cursor").style.background = identities[current].color;
 
@@ -221,69 +221,69 @@ const column = 13;
 const iSpot = column - 1;
 let row = 0;
 
-let gridHoverStatus = [];
-let infoShowing = false;
+let grid_hover_status = [];
+let info_showing = false;
 
-const changeGridBackground = (color, i = 0) => {
+const change_grid_background = (color, i = 0) => {
   const totalSpots = column * row;
   if (i < totalSpots) {
-    const gridSpot = document.getElementById(`grid-spot-${i}`);
-    if (gridSpot) {
-      gridSpot.style.background = color;
-      // if (!gridHoverStatus[i]) {
-      //   gridSpot.style.background =
+    const grid_spot = document.getElementById(`grid-spot-${i}`);
+    if (grid_spot) {
+      grid_spot.style.background = color;
+      // if (!grid_hover_status[i]) {
+      //   grid_spot.style.background =
       //     hoverring || lock ? identities[current].subcolor : "white";
       // } else {
-      //   gridSpot.style.background = identities[current].color;
+      //   grid_spot.style.background = identities[current].color;
       // }
     }
 
     setTimeout(() => {
-      changeGridBackground(color, i + 1);
+      change_grid_background(color, i + 1);
     }, 1);
   }
 };
 
-const changeGridBackgroundColor = (i = 0) => {
+const change_grid_background_color = (i = 0) => {
   const totalSpots = column * row;
   if (i < totalSpots) {
-    const gridSpot = document.getElementById(`grid-spot-${i}`);
-    if (gridSpot) {
-      if (!gridHoverStatus[i]) {
-        gridSpot.style.background =
+    const grid_spot = document.getElementById(`grid-spot-${i}`);
+    if (grid_spot) {
+      if (!grid_hover_status[i]) {
+        grid_spot.style.background =
           hoverring || lock ? identities[current].subcolor : "white";
       } else {
-        gridSpot.style.background = identities[current].color;
+        grid_spot.style.background = identities[current].color;
       }
     }
 
     setTimeout(() => {
-      changeGridBackground(i + 1);
+      change_grid_background(i + 1);
     }, 1);
   }
 };
-const availableSpot = (start, end, exclusion) => {
-  let availableSpots = [];
+const availabe_spot = (start, end, exclusion) => {
+  let available_spots = [];
   for (let i = start; i <= end; i++) {
     if (i !== exclusion) {
-      availableSpots.push(i);
+      available_spots.push(i);
     }
   }
-  return availableSpots;
+  return available_spots;
 };
 
-const randomSpot = (availableSpots) => {
+const random_spot = (available_spots) => {
   for (let i = 0; i < interesting.length; i++) {
-    randomIndex = Math.floor(Math.random() * availableSpots.length);
-    console.log(randomIndex);
-    interesting[i].index = availableSpots[randomIndex];
-    availableSpots.splice(randomIndex, 1);
+    random_index = Math.floor(Math.random() * available_spots.length);
+    console.log(random_index);
+    interesting[i].index = available_spots[random_index];
+    available_spots.splice(random_index, 1);
   }
 };
 
 // id("name-span").innerText = identities[current].name;
-let greetingShowing = false;
-const typeWriterEffect = (divId, text, speed, callback) => {
+let i_am_showing = false;
+const type_writer_effect = (divId, text, speed, callback) => {
   const divElement = document.getElementById(divId);
   let i = 0;
 
@@ -298,21 +298,21 @@ const typeWriterEffect = (divId, text, speed, callback) => {
       i++;
       setTimeout(type, speed);
     } else {
-      // greetingShowing = false; // Reset the flag when typing is complete
+      // i_am_showing = false; // Reset the flag when typing is complete
       if (typeof callback === "function") {
         callback();
       }
     }
   };
 
-  // if (greetingShowing) {
+  // if (i_am_showing) {
   //   console.warn(`Typewriter effect for "${divId}" is already in progress.`);
   //   return; // Exit the function if it's already running
   // }
-  // greetingShowing = true;
+  // i_am_showing = true;
   divElement.innerHTML = "";
   type();
 };
-const removeElementContent = (element) => {
+const remove_element_content = (element) => {
   element.innerHTML = "";
 };

@@ -1,0 +1,6 @@
+/* small_screen.css */
+@media (max-width: 768px) {
+  .big_screen {
+    display: none !important;
+  }
+}

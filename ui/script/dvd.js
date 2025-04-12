@@ -1,5 +1,5 @@
 // dvd.js
-const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
+const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
   if (window.matchMedia("(max-width: 1000px)").matches) {
     return;
   }
@@ -16,28 +16,28 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
   let y = originalY;
   let dx = 1;
   let dy = 1;
-  let lastBounceTime = 0;
-  const bounceInterval = 3000;
+  let last_bounce_time = 0;
+  const bounce_interval = 3000;
 
-  let currentZoom = zoom;
-  let currentSpeed = speed;
+  let current_zoom = zoom;
+  let current_speed = speed;
 
   dvd.addEventListener("mouseenter", () => {
-    dvd.style.transform = `scale(${currentZoom + 0.5})`;
+    dvd.style.transform = `scale(${current_zoom + 0.5})`;
   });
 
   dvd.addEventListener("mouseleave", () => {
-    dvd.style.transform = `scale(${currentZoom})`;
+    dvd.style.transform = `scale(${current_zoom})`;
   });
 
   dvd.addEventListener("mousedown", () => {});
 
-  const moveDVD = () => {
+  const move_dvd = () => {
     const maxX = document.documentElement.clientWidth - dvd.clientWidth;
     const maxY = document.documentElement.clientHeight - dvd.clientHeight;
 
-    x += dx * currentSpeed;
-    y += dy * currentSpeed;
+    x += dx * current_speed;
+    y += dy * current_speed;
 
     let bounced = false;
     if (x <= 0) {
@@ -62,29 +62,29 @@ const startDVDBounce = (id, originalX, originalY, zoom, speed) => {
 
     if (bounced) {
       const currentTime = Date.now();
-      if (currentTime - lastBounceTime >= bounceInterval) {
-        recreateGridLayout();
+      if (currentTime - last_bounce_time >= bounce_interval) {
+        recreate_grid_layout();
 
-        changeId();
+        change_id();
         if (lock || hoverring)
           dvd.style.zIndex = dvd.style.zIndex === "10000" ? "12321" : "10000";
         else {
           dvd.style.zIndex = "10000";
         }
-        // changeGridBackground();
+        // change_grid_background();
 
-        if (infoShowing)
+        if (info_showing)
           document.body.style.background = identities[current].color;
 
-        lastBounceTime = currentTime;
+        last_bounce_time = currentTime;
       }
     }
 
     dvd.style.left = `${x}px`;
     dvd.style.top = `${y}px`;
-    requestAnimationFrame(moveDVD);
+    requestAnimationFrame(move_dvd);
   };
-  moveDVD();
+  move_dvd();
 };
 
-startDVDBounce("name", 0, 0, 1, 1.5);
+start_dvd_bounce("name", 0, 0, 1, 1.5);

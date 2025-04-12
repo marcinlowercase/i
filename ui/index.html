@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./design/index.css" />
     <link rel="stylesheet" href="./design/name.css" />
     <link rel="stylesheet" href="./design/greeting.css" />
+    <link rel="stylesheet" href="./design/small_screen.css" />
     <link rel="icon" href="./img/transparent_tom.svg" type="image/x-icon" />
     <title>Tran Nguyen Hong Thai</title>
 
@@ -27,19 +28,22 @@
     <script src="./script/dvd.js" defer></script>
   </head>
   <body>
-    <div id="name" class="unselectable blinking-glow-shadow">
-      Tran Nguyen Hong Thai
-    </div>
-    <img draggable="false" class="unselectable" id="tom" src="./img/tom.svg" />
+    <div id="name" class="big_screen unselectable">Tran Nguyen Hong Thai</div>
     <img
       draggable="false"
-      class="unselectable"
-      class="unselectable"
+      class="big_screen unselectable"
+      id="tom"
+      src="./img/tom.svg"
+    />
+    <img
+      draggable="false"
+      class="big_screen unselectable"
+      class="big_screen unselectable"
       id="transparent_tom"
       src="./img/transparent_tom.svg"
     />
     <div id="cursor"></div>
-    <div id="greeting" class="greeting"></div>
-    <div id="greetingone" class="greeting"></div>
+    <div id="i_am" class="big_screen greeting"></div>
+    <div id="a_programmer" class="big_screen greeting"></div>
   </body>
 </html>

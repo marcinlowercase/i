@@ -1,11 +1,28 @@
 // swipe.js
 
+const transition = () => {
+  const body = document.body;
+  body.style.background = "gray";
+};
+const show_menu = () => {
+  const body = document.body;
+  body.style.background = "black";
+};
+
+// 0 - nothing
+// 1 - left
+// 2 - down
+// 3 - up
+// 4 - right
+let direction = 0;
+
 if (on_touch_only_device()) {
   const body = document.body;
   let start_x;
   let start_y;
 
   body.addEventListener("touchstart", (event) => {
+    console.log("Touch started");
     start_x = event.touches[0].clientX;
     start_y = event.touches[0].clientY;
   });
@@ -28,6 +45,8 @@ if (on_touch_only_device()) {
     if (Math.abs(diff_x) > threshold && Math.abs(diff_y) < threshold) {
       if (diff_x > 0) {
         console.log("Swiped left on body");
+        direction = 1;
+
         // Do something when swiped left on the body
       } else {
         console.log("Swiped right on body");
@@ -52,6 +71,13 @@ if (on_touch_only_device()) {
   });
 
   body.addEventListener("touchend", () => {
+    console.log("Touch out");
+    start_x = null;
+    start_y = null;
+  });
+
+  body.addEventListener("touchcancel", () => {
+    console.log("Touch cancelled");
     start_x = null;
     start_y = null;
   });

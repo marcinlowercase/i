@@ -161,6 +161,12 @@ let interesting = [
     link: "https://monkeytype.com/",
     index: 0,
   },
+  {
+    icon: "../data/img/git.svg",
+    text: "git",
+    link: "https://git-scm.com/",
+    index: 0,
+  },
 ];
 
 let identities = [

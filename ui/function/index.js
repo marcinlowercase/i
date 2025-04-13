@@ -1,54 +1,4 @@
 // index.js
-const id = (id) => {
-  return document.getElementById(id);
-};
-
-const on_touch_device = () => {
-  return (
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
-};
-
-const on_device_has_mouse = () => {
-  return window.matchMedia("(pointer: fine)").matches;
-};
-
-const on_touch_only_device = () => {
-  return on_touch_device() && !on_device_has_mouse();
-};
-
-console.log("on_touch_only_device: ", on_touch_only_device());
-
-let lock = false;
-let hoverring = false;
-
-const change_id = () => {
-  id("name").style.opacity = "0";
-
-  document.title = identities[current].name;
-  current++;
-
-  if (current >= identities.length) current = 0;
-
-  setTimeout(() => {
-    id("name").innerText = info_showing
-      ? "just a placeholder"
-      : identities[current].name;
-    // id("name-span").innerHTML = identities[current].name;
-
-    let background =
-      lock || hoverring ? identities[current].color : "transparent";
-    if (info_showing) background = "white";
-    id("name").style.background = background;
-    id("cursor").style.background = identities[current].color;
-
-    setTimeout(() => {
-      id("name").style.opacity = "1";
-    }, 200);
-  }, 200);
-};
 
 let connection = [
   {
@@ -230,6 +180,58 @@ let identities = [
     subcolor: "#000055",
   },
 ];
+
+const id = (id) => {
+  return document.getElementById(id);
+};
+
+const on_touch_device = () => {
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+};
+
+const on_device_has_mouse = () => {
+  return window.matchMedia("(pointer: fine)").matches;
+};
+
+const on_touch_only_device = () => {
+  return on_touch_device() && !on_device_has_mouse();
+};
+
+console.log("on_touch_only_device: ", on_touch_only_device());
+
+let lock = false;
+let hoverring = false;
+
+const change_id = () => {
+  current++;
+  if (current >= identities.length) current = 0;
+
+  id("name").style.opacity = "0";
+
+  document.title = identities[current].name;
+
+  setTimeout(() => {
+    id("name").innerText = info_showing
+      ? "just a placeholder"
+      : identities[current].name;
+    // id("name-span").innerHTML = identities[current].name;
+
+    let background =
+      lock || hoverring ? identities[current].color : "transparent";
+    if (info_showing) background = "white";
+    id("name").style.background = background;
+    id("cursor").style.background = identities[current].color;
+
+    setTimeout(() => {
+      id("name").style.opacity = "1";
+    }, 200);
+  }, 200);
+};
+
 let current = 0;
 
 const name = id("name");

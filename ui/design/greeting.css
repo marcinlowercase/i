@@ -1,14 +1,15 @@
 /* i_am.css */
 
 .greeting {
-  transition: opacity 0.5s;
-  z-index: 11;
+  color: white;
   font-family: var(--mono-font);
   font-size: xx-large;
   font-weight: lighter;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
+  transition: opacity 0.5s;
+  z-index: 11;
 }
 #i_am {
   transform: translate(-50%, -100%);

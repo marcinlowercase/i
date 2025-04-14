@@ -220,6 +220,7 @@ if (on_touch_only_device()) {
 
 let lock = false;
 let hoverring = false;
+let booting = true;
 
 const change_id = () => {
   current++;

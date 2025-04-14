@@ -33,7 +33,7 @@ if (!on_touch_only_device()) {
   });
 } else {
   tom.addEventListener("click", () => {
-    if (screen === 0) {
+    if (!booting && screen === 0) {
       lock = !lock;
       if (lock) start_audio("boot");
       tom.style.opacity = tom.style.opacity === "1" ? "0" : "1";

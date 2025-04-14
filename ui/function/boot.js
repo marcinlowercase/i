@@ -4,6 +4,7 @@ const boot = () => {
   name.style.opacity = "0";
   setTimeout(() => {
     if (!lock && !hoverring) tom.style.opacity = "0";
+    booting = false;
   }, 500);
 };
 

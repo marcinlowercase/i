@@ -57,7 +57,16 @@ if (on_touch_only_device()) {
         }
       } else {
         console.log("Swiped right on body");
-        // Do something when swiped right on the body
+        direction = 1;
+        screen = screen === 1 ? 0 : 1;
+
+        if (screen === 1) {
+          if (!lock) transparent_tom.style.opacity = 0.3;
+          else tom.style.opacity = 0.3;
+        } else if (screen === 0) {
+          i_am.style.opacity = 0.3;
+          a_programmer.style.opacity = 0.3;
+        }
       }
       start_x = null;
       start_y = null;

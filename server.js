@@ -4,7 +4,7 @@ import { join } from "https://deno.land/std@0.211.0/path/mod.ts";
 import { contentType } from "https://deno.land/std@0.211.0/media_types/mod.ts";
 
 const PORT = 11111;
-const UI_DIRECTORY = "ui";
+const ui_directory = "ui";
 
 const handleRequest = async (request) => {
   const url = new URL(request.url);
@@ -13,9 +13,9 @@ const handleRequest = async (request) => {
   try {
     let filePath = "";
     if (pathname === "/i") {
-      filePath = join(Deno.cwd(), UI_DIRECTORY, "index.html");
+      filePath = join(Deno.cwd(), ui_directory, "i", "i.html");
     } else {
-      filePath = join(Deno.cwd(), UI_DIRECTORY, pathname);
+      filePath = join(Deno.cwd(), ui_directory, "i", pathname);
     }
 
     const file = await Deno.readFile(filePath);

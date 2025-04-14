@@ -31,10 +31,16 @@
   align-items: center;
   height: 100%;
 }
+.connection-spot {
+  border-bottom: white solid 2px;
+}
+.connection-spot:last-child {
+  border-right: white solid 2px;
+}
 
 .connection {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   object-fit: cover;
   transition: opacity 0.5s;
 }

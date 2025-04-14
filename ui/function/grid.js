@@ -62,7 +62,7 @@ const create_grid_layout = () => {
         </a>
       </div>
       `;
-      grid_spot.style.borderRadius = "50%";
+      // grid_spot.style.borderRadius = "50%";
     } else if (i === column - 1) {
       ///// info
       grid_spot.innerText = "i";

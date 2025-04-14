@@ -39,7 +39,7 @@ if (!on_touch_only_device()) {
       document.body.style.background =
         document.body.style.background === "black" ? "white" : "black";
       change_greeting_color();
-      change_color();
+      // change_color();
     }
   });
 }

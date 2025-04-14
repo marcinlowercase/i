@@ -1,12 +1,6 @@
 /* small_screen.css */
 @media (max-width: 768px) {
-  /* .big_screen {
+  .big_screen {
     display: none !important;
   }
-  body {
-    background-color: black;
-  }
-  .info {
-    display: none;
-  } */
 }

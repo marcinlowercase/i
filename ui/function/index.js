@@ -214,6 +214,9 @@ const on_touch_only_device = () => {
 };
 
 console.log("on_touch_only_device: ", on_touch_only_device());
+if (on_touch_only_device()) {
+  document.title = "Theo";
+}
 
 let lock = false;
 let hoverring = false;

@@ -35,6 +35,7 @@ if (!on_touch_only_device()) {
   tom.addEventListener("click", () => {
     if (screen === 0) {
       lock = !lock;
+      start_audio("boot");
       tom.style.opacity = tom.style.opacity === "1" ? "0" : "1";
       document.body.style.background =
         document.body.style.background === "black" ? "white" : "black";

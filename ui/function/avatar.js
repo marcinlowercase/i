@@ -3,7 +3,7 @@ if (!on_touch_only_device()) {
   const cursor = id("cursor");
   tom.addEventListener("mouseover", (e) => {
     hoverring = true;
-
+    // start_audio("boot");
     tom.style.opacity = "1";
     cursor.style.opacity = "0";
     name.style.background = identities[current].color;

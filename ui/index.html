@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="https://use.typekit.net/dpj6hnf.css" />
     <link rel="stylesheet" href="./design/avatar.css" />
+    <link rel="stylesheet" href="./design/audio.css" />
     <link rel="stylesheet" href="./design/cursor.css" />
     <link rel="stylesheet" href="./design/grid.css" />
     <link rel="stylesheet" href="./design/index.css" />
@@ -27,15 +28,20 @@
     />
     <title>Tran Nguyen Hong Thai</title>
     <script src="./function/index.js" defer></script>
+    <script src="./function/boot.js" defer></script>
     <script src="./function/grid.js" defer></script>
     <script src="./function/name.js" defer></script>
     <script src="./function/avatar.js" defer></script>
     <script src="./function/cursor.js" defer></script>
+    <script src="./function/audio.js" defer></script>
     <script src="./function/dvd.js" defer></script>
     <script src="./function/greeting.js" defer></script>
     <script src="./function/swipe.js" defer></script>
   </head>
   <body>
+    <audio id="boot" controls>
+      <source src="./data/audio/boot.m4a" type="audio/mp4" />
+    </audio>
     <div id="name" class="unselectable big_screen">Tran Nguyen Hong Thai</div>
     <img
       draggable="false"

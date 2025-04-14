@@ -7,7 +7,7 @@
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease-in-out;
 }
 #tom {
   cursor: grab;
@@ -16,7 +16,7 @@
 }
 
 #transparent_tom {
-  z-index: 11110;
+  z-index: 11100;
 }
 
 @media (max-width: 768px) {

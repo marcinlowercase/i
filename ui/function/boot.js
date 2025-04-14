@@ -1,0 +1,10 @@
+// boot.js
+const boot = () => {
+  tom.style.opacity = "1";
+  name.style.opacity = "0";
+  setTimeout(() => {
+    if (!lock && !hoverring) tom.style.opacity = "0";
+  }, 500);
+};
+
+window.addEventListener("load", boot);

@@ -1,11 +1,9 @@
 // name.js
+name.addEventListener("click", () => {
+  change_id();
+  // change_grid_background();
+});
 if (!on_touch_only_device()) {
-  const name = id("name");
-  name.addEventListener("click", () => {
-    change_id();
-    // change_grid_background();
-  });
-
   name.addEventListener("mouseenter", () => {
     name.style.background = identities[current].color;
     id("cursor").style.background = identities[current].color;

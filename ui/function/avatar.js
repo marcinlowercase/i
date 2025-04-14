@@ -1,8 +1,6 @@
 // avatar.js
 if (!on_touch_only_device()) {
-  const tom = id("tom");
   const cursor = id("cursor");
-  const name = id("name");
   tom.addEventListener("mouseover", (e) => {
     hoverring = true;
 
@@ -32,5 +30,16 @@ if (!on_touch_only_device()) {
     document.body.style.cursor = lock ? "default" : "grabbing";
     // change_grid_background();
     document.body.style.background = "black";
+  });
+} else {
+  tom.addEventListener("click", () => {
+    if (screen === 0) {
+      lock = !lock;
+      tom.style.opacity = tom.style.opacity === "1" ? "0" : "1";
+      document.body.style.background =
+        document.body.style.background === "black" ? "white" : "black";
+      change_greeting_color();
+      change_color();
+    }
   });
 }

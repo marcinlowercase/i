@@ -187,6 +187,12 @@ let identities = [
   },
 ];
 
+// 0 - landing
+// 1 - greeting
+// 2 - connection
+// 3 - interesting
+let screen = 0;
+
 const id = (id) => {
   return document.getElementById(id);
 };
@@ -216,32 +222,39 @@ const change_id = () => {
   current++;
   if (current >= identities.length) current = 0;
 
-  id("name").style.opacity = "0";
+  name.style.opacity = "0";
 
   document.title = identities[current].name;
 
   setTimeout(() => {
-    id("name").innerText = info_showing
+    name.innerText = info_showing
       ? "just a placeholder"
       : identities[current].name;
     // id("name-span").innerHTML = identities[current].name;
 
-    let background =
-      lock || hoverring ? identities[current].color : "transparent";
-    if (info_showing) background = "white";
-    id("name").style.background = background;
-    id("cursor").style.background = identities[current].color;
+    change_color();
 
     setTimeout(() => {
-      id("name").style.opacity = "1";
+      name.style.opacity = "1";
     }, 200);
   }, 200);
+};
+
+const change_color = () => {
+  let background =
+    lock || hoverring ? identities[current].color : "transparent";
+  if (info_showing) background = "white";
+  name.style.background = background;
+  id("cursor").style.background = identities[current].color;
 };
 
 let current = 0;
 
 const name = id("name");
 const tom = id("tom");
+const transparent_tom = id("transparent_tom");
+const i_am = id("i_am");
+const a_programmer = id("a_programmer");
 
 const column = 13;
 const iSpot = column - 1;
@@ -337,6 +350,30 @@ const type_writer_effect = (divId, text, speed, callback) => {
   // i_am_showing = true;
   divElement.innerHTML = "";
   type();
+};
+const type_writer_remove_effect = (divId, speed, callback) => {
+  const divElement = document.getElementById(divId);
+  let text = divElement.innerHTML;
+  let i = text.length - 1;
+
+  if (!divElement) {
+    console.error(`Element with ID "${divId}" not found.`);
+    return;
+  }
+
+  const remove = () => {
+    if (i >= 0) {
+      divElement.innerHTML = text.substring(0, i);
+      i--;
+      setTimeout(remove, speed);
+    } else {
+      if (typeof callback === "function") {
+        callback();
+      }
+    }
+  };
+
+  remove();
 };
 const remove_element_content = (element) => {
   element.innerHTML = "";

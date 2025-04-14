@@ -46,8 +46,15 @@ if (on_touch_only_device()) {
       if (diff_x > 0) {
         console.log("Swiped left on body");
         direction = 1;
+        screen = screen === 1 ? 0 : 1;
 
-        // Do something when swiped left on the body
+        if (screen === 1) {
+          if (!lock) transparent_tom.style.opacity = 0.3;
+          else tom.style.opacity = 0.3;
+        } else if (screen === 0) {
+          i_am.style.opacity = 0.3;
+          a_programmer.style.opacity = 0.3;
+        }
       } else {
         console.log("Swiped right on body");
         // Do something when swiped right on the body
@@ -67,11 +74,31 @@ if (on_touch_only_device()) {
       }
       start_x = null;
       start_y = null;
+      direction = 0;
     }
   });
 
   body.addEventListener("touchend", () => {
     console.log("Touch out");
+    if (direction === 1) {
+      if (screen === 1) {
+        tom.style.opacity = 0;
+        transparent_tom.style.opacity = 0;
+        i_am.style.opacity = 1;
+        a_programmer.style.opacity = 1;
+
+        if (!i_am_showing)
+          type_writer_effect("i_am", `I am Theo,`, 100, () => {
+            type_writer_effect("a_programmer", `a Programmer`, 100);
+            i_am_showing = true;
+          });
+      } else if (screen === 0) {
+        i_am.style.opacity = 0;
+        a_programmer.style.opacity = 0;
+        tom.style.opacity = lock ? 1 : 0;
+        transparent_tom.style.opacity = 1;
+      }
+    }
     start_x = null;
     start_y = null;
   });

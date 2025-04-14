@@ -9,7 +9,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  color: white;
 }
 #i_am {
   transform: translate(-50%, -100%);
@@ -17,4 +16,10 @@
 
 #a_programmer {
   transform: translate(-50%, 0%);
+}
+
+@media (max-width: 768px) {
+  .greeting {
+    width: 80%;
+  }
 }

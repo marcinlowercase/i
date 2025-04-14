@@ -1,14 +1,16 @@
 /* name.css */
 #name {
   border-radius: var(--border-radius--regular);
-  bottom: 0;
   color: white;
   cursor: pointer;
   font-family: var(--mono-font);
   font-size: var(--font-size--m);
   font-weight: 400;
   height: fit-content;
-  left: 0;
+
+  right: 0;
+  /* transform: translate(-50%, -50%); */
+
   padding: var(--line-size--thick);
   position: absolute;
   transition: background 0.5s, opacity 200ms, all 0.5s, width 0.5s;
@@ -16,4 +18,16 @@
 }
 #name:hover {
   animation: none;
+}
+
+@media (max-width: 768px) {
+  #name {
+    bottom: 0;
+    margin: var(--line-size--thick);
+    right: 50%;
+
+    text-align: center;
+    transform: translate(50%, 0%);
+    width: 80%;
+  }
 }

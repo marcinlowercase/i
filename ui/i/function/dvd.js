@@ -10,6 +10,7 @@ const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
     return;
   }
   dvd.style.position = "absolute";
+  console.log("this line");
   dvd.style.zIndex = "10000";
 
   let x = originalX;
@@ -79,7 +80,7 @@ const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
         last_bounce_time = currentTime;
       }
     }
-
+    console.log(dvd.style.zIndex);
     dvd.style.left = `${x}px`;
     dvd.style.top = `${y}px`;
     requestAnimationFrame(move_dvd);

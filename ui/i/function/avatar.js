@@ -12,7 +12,6 @@ if (!on_touch_only_device()) {
   });
   tom.addEventListener("mouseout", (e) => {
     hoverring = false;
-    name.style.zIndex = "10000";
     cursor.style.opacity = "1";
 
     if (!lock) {

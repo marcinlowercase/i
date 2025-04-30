@@ -62,8 +62,8 @@ const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
     }
 
     if (bounced) {
-      const currentTime = Date.now();
-      if (currentTime - last_bounce_time >= bounce_interval) {
+      const current_time = Date.now();
+      if (current_time - last_bounce_time >= bounce_interval) {
         recreate_grid_layout();
 
         change_id();
@@ -77,10 +77,9 @@ const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
         if (info_showing)
           document.body.style.background = identities[current].color;
 
-        last_bounce_time = currentTime;
+        last_bounce_time = current_time;
       }
     }
-    console.log(dvd.style.zIndex);
     dvd.style.left = `${x}px`;
     dvd.style.top = `${y}px`;
     requestAnimationFrame(move_dvd);

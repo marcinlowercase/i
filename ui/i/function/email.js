@@ -22,10 +22,7 @@ email_element.addEventListener("click", () => {
   navigator.clipboard
     .writeText(email)
     .then(() => {
-      prompt(
-        "My email copied to clipboard. You can paste it with Ctrl+V:",
-        email,
-      );
+      prompt("my email copied to clipboard. you can paste it now: ", email);
     })
     .catch((err) => {
       console.error("Failed to access clipboard", err);

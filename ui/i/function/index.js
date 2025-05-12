@@ -6,11 +6,11 @@ let connection = [
     text: "resume",
     link: "https://docs.google.com/document/d/1Zb1G7-cnQZPLSe6emyRnGTxa02sNw04VKvyczkuLDPE/edit?usp=sharing",
   },
-  {
-    icon: "../data/img/mail.svg",
-    text: "email",
-    link: "marcinlowercase@gmail.com",
-  },
+  // {
+  //   icon: "../data/img/mail.svg",
+  //   text: "email",
+  //   link: "marcinlowercase@gmail.com",
+  // },
   {
     icon: "../data/img/linkedin.svg",
     text: "linkedin",

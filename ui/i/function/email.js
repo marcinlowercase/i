@@ -15,8 +15,7 @@
 // });
 
 const email_element = document.getElementById("email");
-
-email_element.addEventListener("click", () => {
+const copy_email = () => {
   const email = email_element.textContent;
 
   navigator.clipboard
@@ -27,4 +26,5 @@ email_element.addEventListener("click", () => {
     .catch((err) => {
       console.error("Failed to access clipboard", err);
     });
-});
+};
+email_element.addEventListener("click", copy_email);

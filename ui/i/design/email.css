@@ -1,0 +1,9 @@
+#email {
+    bottom: 0;
+    color: white;
+    font-family: var(--mono-font);
+    font-size: var(--font-size--m);
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}

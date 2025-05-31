@@ -1,26 +1,27 @@
 // index.js
 
+// deisable connection
 let connection = [
-  {
-    icon: "../data/img/pdf.svg",
-    text: "resume",
-    link: "https://docs.google.com/document/d/1Zb1G7-cnQZPLSe6emyRnGTxa02sNw04VKvyczkuLDPE/edit?usp=sharing",
-  },
   // {
-  //   icon: "../data/img/mail.svg",
-  //   text: "email",
-  //   link: "marcinlowercase@gmail.com",
+  //   icon: "../data/img/pdf.svg",
+  //   text: "resume",
+  //   link: "https://docs.google.com/document/d/1Zb1G7-cnQZPLSe6emyRnGTxa02sNw04VKvyczkuLDPE/edit?usp=sharing",
   // },
-  {
-    icon: "../data/img/linkedin.svg",
-    text: "linkedin",
-    link: "https://www.linkedin.com/in/trannguyenhongthai/",
-  },
-  {
-    icon: "../data/img/github.svg",
-    text: "github",
-    link: "https://github.com/marcinlowercase",
-  },
+  // // {
+  // //   icon: "../data/img/mail.svg",
+  // //   text: "email",
+  // //   link: "marcinlowercase@gmail.com",
+  // // },
+  // {
+  //   icon: "../data/img/linkedin.svg",
+  //   text: "linkedin",
+  //   link: "https://www.linkedin.com/in/trannguyenhongthai/",
+  // },
+  // {
+  //   icon: "../data/img/github.svg",
+  //   text: "github",
+  //   link: "https://github.com/marcinlowercase",
+  // },
 ];
 let interesting = [
   {

@@ -16,7 +16,7 @@ const create_grid_layout = () => {
   row =
     Math.floor(
       (document.documentElement.clientHeight - (column - 1) * gap_size) /
-        grid_side
+        grid_side,
     ) + 1;
   grid_layout.style.gridTemplateColumns = `repeat(${column}, ${grid_side}px)`;
   grid_layout.style.gridTemplateRows = `repeat(${row}, ${grid_side}px)`;
@@ -24,7 +24,7 @@ const create_grid_layout = () => {
   const available_spots = availabe_spot(
     connection.length,
     column * row,
-    column
+    column,
   );
   random_spot(available_spots);
   for (let i = 0; i < column * row; i++) {
@@ -84,10 +84,10 @@ const create_grid_layout = () => {
           id("a_programmer").style.opacity = "1";
           if (!i_am_showing) {
             if (info_showing)
-              type_writer_effect("i_am", `I am Theo,`, 100, () => {
-                type_writer_effect("a_programmer", `a Programmer`, 100);
-              });
-            i_am_showing = true;
+              // type_writer_effect("i_am", `I am Theo,`, 100, () => {
+              //   type_writer_effect("a_programmer", `a Programmer`, 100);
+              // });
+              i_am_showing = true;
           }
 
           id("name").innerText = "just a placeholder";
@@ -128,7 +128,7 @@ const create_grid_layout = () => {
                   title="${interesting[j].text}"
                   class="interesting"
                   style="opacity: ${info_showing ? "0" : "1"}"
-                  
+
                 />
               </a>
             </div>

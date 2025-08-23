@@ -96,11 +96,11 @@ if (on_touch_only_device()) {
         i_am.style.opacity = 1;
         a_programmer.style.opacity = 1;
 
-        if (!i_am_showing)
-          type_writer_effect("i_am", `I am Theo,`, 100, () => {
-            type_writer_effect("a_programmer", `a Programmer`, 100);
-            i_am_showing = true;
-          });
+        // if (!i_am_showing)
+        //   type_writer_effect("i_am", `I am Theo,`, 100, () => {
+        //     type_writer_effect("a_programmer", `a Programmer`, 100);
+        //     i_am_showing = true;
+        //   });
       } else if (screen === 0) {
         i_am.style.opacity = 0;
         a_programmer.style.opacity = 0;

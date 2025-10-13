@@ -1,6 +1,7 @@
 // dvd.js
 const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
   if (window.matchMedia("(max-width: 1000px)").matches) {
+    console.log("max-width< 1000px");
     return;
   }
 

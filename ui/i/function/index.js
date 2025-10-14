@@ -210,8 +210,6 @@ const on_touch_device = () => {
 
 const on_device_has_mouse = () => {
   if (window.APP_CONFIG && window.APP_CONFIG.hasSimulatedCursor) {
-    // If the server told us the cursor is simulated, we lie and say we have a mouse.
-    console.log("Simulated cursor detected! Faking mouse presence.");
     return true;
   }
   return window.matchMedia("(pointer: fine)").matches;

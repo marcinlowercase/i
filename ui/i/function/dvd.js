@@ -1,9 +1,9 @@
 // dvd.js
 const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
-  if (window.matchMedia("(max-width: 819px)").matches) {
-    console.log("max-width< 819px");
-    return;
-  }
+  // if (window.matchMedia("(max-width: 819px)").matches) {
+  //   console.log("max-width< 819px");
+  //   return;
+  // }
 
   const dvd = document.getElementById(id);
   if (!dvd) {
@@ -37,8 +37,6 @@ const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
   const move_dvd = () => {
     const maxX = document.documentElement.clientWidth - dvd.clientWidth;
     const maxY = document.documentElement.clientHeight - dvd.clientHeight;
-
-    console.log(`maxX: ${maxX}, maxY: ${maxY}`);
 
     x += dx * current_speed;
     y += dy * current_speed;

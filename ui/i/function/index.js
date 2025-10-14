@@ -218,7 +218,7 @@ const on_device_has_mouse = () => {
 };
 
 const on_touch_only_device = () => {
-  return on_touch_device() && !on_device_has_mouse();
+  return !on_device_has_mouse() && on_touch_device();
 };
 
 console.log("on_touch_only_device: ", on_touch_only_device());

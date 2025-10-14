@@ -1,5 +1,7 @@
 // index.js
 
+console.log("make by marcinlowercase");
+
 // deisable connection
 let connection = [
   // {

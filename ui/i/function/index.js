@@ -209,7 +209,6 @@ const on_touch_device = () => {
 };
 
 const on_device_has_mouse = () => {
-  console.log("on_device_has_mouse() called");
   console.log(window.APP_CONFIG);
   if (window.APP_CONFIG) console.log("APP_CONFIG exists");
   if (window.APP_CONFIG && window.APP_CONFIG.hasSimulatedCursor) {

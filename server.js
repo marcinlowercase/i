@@ -14,33 +14,46 @@ const handleRequest = async (request) => {
     let filePath = "";
     if (pathname === "/i") {
       filePath = join(Deno.cwd(), ui_directory, "i", "i.html");
+      var file = await Deno.readTextFile(filePath);
+
+      const hasSimulatedCursor =
+        request.headers.get("simulated_cursor") === "true";
+
+      const clientConfigScript = `
+              <script>
+                window.APP_CONFIG = { hasSimulatedCursor: ${hasSimulatedCursor} };
+              </script>
+            `;
+
+      file = file.replace("</head>", `${clientConfigScript}</head>`);
+
+      console.log(file);
+      const fileExtension = filePath.split(".").pop();
+      const responseHeaders = new Headers({
+        "content-type":
+          contentType(`.${fileExtension}`) || "application/octet-stream",
+      });
+      return new Response(file, {
+        status: 200,
+        headers: responseHeaders,
+      });
     } else {
       filePath = join(Deno.cwd(), ui_directory, "i", pathname);
+
+      const file = await Deno.readTextFile(filePath);
+
+      const fileExtension = filePath.split(".").pop();
+
+      const responseHeaders = new Headers({
+        "content-type":
+          contentType(`.${fileExtension}`) || "application/octet-stream",
+      });
+
+      return new Response(file, {
+        status: 200,
+        headers: responseHeaders,
+      });
     }
-    const file = await Deno.readTextFile(filePath);
-
-    const hasSimulatedCursor =
-      request.headers.get("simulated_cursor") === "true";
-
-    const clientConfigScript = `
-            <script>
-              window.APP_CONFIG = { hasSimulatedCursor: ${hasSimulatedCursor} };
-            </script>
-          `;
-
-    file.replace("</head>", `${clientConfigScript}</head>`);
-
-    const fileExtension = filePath.split(".").pop();
-
-    const responseHeaders = new Headers({
-      "content-type":
-        contentType(`.${fileExtension}`) || "application/octet-stream",
-    });
-
-    return new Response(file, {
-      status: 200,
-      headers: responseHeaders,
-    });
   } catch (error) {
     console.warn(`File not found: ${pathname}`);
     return new Response("Not Found", { status: 404 });

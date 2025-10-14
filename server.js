@@ -17,8 +17,19 @@ const handleRequest = async (request) => {
     } else {
       filePath = join(Deno.cwd(), ui_directory, "i", pathname);
     }
+    const file = await Deno.readTextFile(filePath);
 
-    const file = await Deno.readFile(filePath);
+    const hasSimulatedCursor =
+      request.headers.get("simulated_cursor") === "true";
+
+    const clientConfigScript = `
+            <script>
+              window.APP_CONFIG = { hasSimulatedCursor: ${hasSimulatedCursor} };
+            </script>
+          `;
+
+    file.replace("</head>", `${clientConfigScript}</head>`);
+
     const fileExtension = filePath.split(".").pop();
 
     const responseHeaders = new Headers({

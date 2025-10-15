@@ -2,6 +2,10 @@
 
 console.log("make by marcinlowercase");
 
+const client_device_corner_radius =
+  window.APP_CONFIG.client_device_corner_radius;
+
+console.log(`client_device_corner_radius: ${client_device_corner_radius}`);
 // deisable connection
 let connection = [
   // {
@@ -209,7 +213,7 @@ const on_touch_device = () => {
 };
 
 const on_device_has_mouse = () => {
-  if (window.APP_CONFIG && window.APP_CONFIG.hasSimulatedCursor) {
+  if (window.APP_CONFIG && window.APP_CONFIG.has_simulated_cursor) {
     return true;
   }
   return window.matchMedia("(pointer: fine)").matches;

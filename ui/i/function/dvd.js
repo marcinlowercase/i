@@ -38,6 +38,13 @@ const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
     const maxX = document.documentElement.clientWidth - dvd.clientWidth;
     const maxY = document.documentElement.clientHeight - dvd.clientHeight;
 
+    console.log(
+      " document.documentElement.clientWidth:",
+      document.documentElement.clientWidth,
+      "document.documentElement.clientHeight:",
+      document.documentElement.clientHeight,
+    );
+
     x += dx * current_speed;
     y += dy * current_speed;
 

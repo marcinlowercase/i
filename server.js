@@ -16,18 +16,25 @@ const handleRequest = async (request) => {
       filePath = join(Deno.cwd(), ui_directory, "i", "i.html");
       var file = await Deno.readTextFile(filePath);
 
-      const hasSimulatedCursor =
+      const has_simulated_cursor =
         request.headers.get("simulated_cursor") === "true";
 
-      const clientConfigScript = `
+      const client_device_corner_radius = parseFloat(
+        request.headers.get("device_corner_radius") || "0",
+      );
+
+      const client_config_script = `
               <script>
-                window.APP_CONFIG = { hasSimulatedCursor: ${hasSimulatedCursor} };
+                window.APP_CONFIG = {
+                  has_simulated_cursor: ${has_simulated_cursor},
+                  client_device_corner_radius: ${client_device_corner_radius},
+                };
+
               </script>
             `;
 
-      file = file.replace("</head>", `${clientConfigScript}</head>`);
+      file = file.replace("</head>", `${client_config_script}</head>`);
 
-      console.log(file);
       const fileExtension = filePath.split(".").pop();
       const responseHeaders = new Headers({
         "content-type":

@@ -9,167 +9,169 @@ console.log(`client_device_corner_radius: ${client_device_corner_radius}`);
 // deisable connection
 let connection = [
   // {
-  //   icon: "../data/img/pdf.svg",
+  //   icon: "../i/data/img/pdf.svg",
   //   text: "resume",
   //   link: "https://docs.google.com/document/d/1Zb1G7-cnQZPLSe6emyRnGTxa02sNw04VKvyczkuLDPE/edit?usp=sharing",
   // },
   // // {
-  // //   icon: "../data/img/mail.svg",
+  // //   icon: "../i/data/img/mail.svg",
   // //   text: "email",
   // //   link: "marcinlowercase@gmail.com",
   // // },
   // {
-  //   icon: "../data/img/linkedin.svg",
+  //   icon: "../i/data/img/linkedin.svg",
   //   text: "linkedin",
   //   link: "https://www.linkedin.com/in/trannguyenhongthai/",
   // },
   // {
-  //   icon: "../data/img/github.svg",
+  //   icon: "../i/data/img/github.svg",
   //   text: "github",
   //   link: "https://github.com/marcinlowercase",
   // },
 ];
 let interesting = [
   {
-    icon: "../data/img/archlinux.svg",
+    icon: "../i/data/img/archlinux.svg",
     text: "archlinux",
     link: "https://archlinux.org/",
     index: 0,
   },
   {
-    icon: "../data/img/deno.svg",
+    icon: "../i/data/img/deno.svg",
     text: "deno",
     link: "https://deno.com/",
     index: 0,
   },
   {
-    icon: "../data/img/rust.svg",
+    icon: "../i/data/img/rust.svg",
     text: "rust",
     link: "https://www.rust-lang.org/",
     index: 0,
   },
   {
-    icon: "../data/img/figma.svg",
+    icon: "../i/data/img/figma.svg",
     text: "figma",
     link: "https://www.figma.com/",
     index: 0,
   },
   {
-    icon: "../data/img/google.svg",
+    icon: "../i/data/img/google.svg",
     text: "google",
     link: "https://www.google.com/",
     index: 0,
   },
   {
-    icon: "../data/img/zig.svg",
+    icon: "../i/data/img/zig.svg",
     text: "zig",
     link: "https://ziglang.org/",
     index: 0,
   },
   {
-    icon: "../data/img/tldraw.svg",
+    icon: "../i/data/img/tldraw.svg",
     text: "tldraw",
     link: "https://www.tldraw.com/",
     index: 0,
   },
   {
-    icon: "../data/img/excalidraw.svg",
+    icon: "../i/data/img/excalidraw.svg",
     text: "excalidraw",
     link: "https://excalidraw.com/",
     index: 0,
   },
   {
-    icon: "../data/img/vim.svg",
+    icon: "../i/data/img/vim.svg",
     text: "vim",
     link: "https://www.vim.org/",
     index: 0,
   },
   {
-    icon: "../data/img/c.svg",
+    icon: "../i/data/img/c.svg",
     text: "c",
-    link: "https://www.google.com/search?q=The+C+Programming+Language&sca_esv=242238691926b20a&sxsrf=AHTn8zqJl_uKnGdxTPEdh9gA0L8wcExJiA%3A1744243070841&ei=fgn3Z7qKM-urptQPiZyg2Aw&ved=0ahUKEwi6wY7lk8yMAxXrlYkEHQkOCMsQ4dUDCBA&uact=5&oq=The+C+Programming+Language&gs_lp=Egxnd3Mtd2l6LXNlcnAiGlRoZSBDIFByb2dyYW1taW5nIExhbmd1YWdlMgoQIxiABBgnGIoFMgoQIxiABBgnGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgoQLhiABBhDGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAAGIAESNUpUABY4CVwAXgBkAEAmAF7oAHEE6oBBDIxLja4AQPIAQD4AQGYAhygAuEUwgIEECMYJ8ICEBAAGIAEGLEDGEMYgwEYigXCAgoQABiABBgUGIcCwgIOEC4YgAQYsQMY0QMYxwHCAgsQLhiABBixAxiDAcICDhAuGIAEGMcBGI4FGK8BwgILEC4YgAQYxwEYrwHCAgUQLhiABMICCBAuGIAEGNQCwgIHEAAYgAQYCsICBxAjGLACGCfCAgoQLhiABBjUAhgNwgIHEAAYgAQYDcICBxAuGIAEGA2YAwCSBwUxOC4xMKAHpdQDsgcFMTcuMTC4B9sU&sclient=gws-wiz-serp",
+    link:
+      "https://www.google.com/search?q=The+C+Programming+Language&sca_esv=242238691926b20a&sxsrf=AHTn8zqJl_uKnGdxTPEdh9gA0L8wcExJiA%3A1744243070841&ei=fgn3Z7qKM-urptQPiZyg2Aw&ved=0ahUKEwi6wY7lk8yMAxXrlYkEHQkOCMsQ4dUDCBA&uact=5&oq=The+C+Programming+Language&gs_lp=Egxnd3Mtd2l6LXNlcnAiGlRoZSBDIFByb2dyYW1taW5nIExhbmd1YWdlMgoQIxiABBgnGIoFMgoQIxiABBgnGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgoQLhiABBhDGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAAGIAESNUpUABY4CVwAXgBkAEAmAF7oAHEE6oBBDIxLja4AQPIAQD4AQGYAhygAuEUwgIEECMYJ8ICEBAAGIAEGLEDGEMYgwEYigXCAgoQABiABBgUGIcCwgIOEC4YgAQYsQMY0QMYxwHCAgsQLhiABBixAxiDAcICDhAuGIAEGMcBGI4FGK8BwgILEC4YgAQYxwEYrwHCAgUQLhiABMICCBAuGIAEGNQCwgIHEAAYgAQYCsICBxAjGLACGCfCAgoQLhiABBjUAhgNwgIHEAAYgAQYDcICBxAuGIAEGA2YAwCSBwUxOC4xMKAHpdQDsgcFMTcuMTC4B9sU&sclient=gws-wiz-serp",
     index: 0,
   },
   {
-    icon: "../data/img/javascript.svg",
+    icon: "../i/data/img/javascript.svg",
     text: "javascript",
     link: "https://javascript.tm/",
     index: 0,
   },
   {
-    icon: "../data/img/idx.svg",
+    icon: "../i/data/img/idx.svg",
     text: "idx",
     link: "https://idx.google.com/",
     index: 0,
   },
   {
-    icon: "../data/img/github.svg",
+    icon: "../i/data/img/github.svg",
     text: "github",
     link: "https://github.com/",
     index: 0,
   },
   {
-    icon: "../data/img/fedora.svg",
+    icon: "../i/data/img/fedora.svg",
     text: "fedora",
     link: "https://fedoraproject.org/",
     index: 0,
   },
   {
-    icon: "../data/img/arm.svg",
+    icon: "../i/data/img/arm.svg",
     text: "arm",
     link: "https://www.arm.com/architecture",
     index: 0,
   },
   {
-    icon: "../data/img/chrome.svg",
+    icon: "../i/data/img/chrome.svg",
     text: "chrome",
     link: "https://www.google.com/intl/en_ca/chrome/canary/",
     index: 0,
   },
   {
-    icon: "../data/img/tmux.svg",
+    icon: "../i/data/img/tmux.svg",
     text: "tmux",
     link: "https://github.com/tmux/tmux",
     index: 0,
   },
   {
-    icon: "../data/img/gnome.svg",
+    icon: "../i/data/img/gnome.svg",
     text: "gnome",
     link: "https://www.gnome.org/",
     index: 0,
   },
   {
-    icon: "../data/img/android.svg",
+    icon: "../i/data/img/android.svg",
     text: "android",
     link: "https://developer.android.com/",
     index: 0,
   },
   {
-    icon: "../data/img/swift.svg",
+    icon: "../i/data/img/swift.svg",
     text: "swift",
-    link: "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/",
+    link:
+      "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/",
     index: 0,
   },
   {
-    icon: "../data/img/redis.svg",
+    icon: "../i/data/img/redis.svg",
     text: "redis",
     link: "https://redis.io/",
     index: 0,
   },
   {
-    icon: "../data/img/sway.svg",
+    icon: "../i/data/img/sway.svg",
     text: "sway",
     link: "https://swaywm.org/",
     index: 0,
   },
   {
-    icon: "../data/img/monkeytype.svg",
+    icon: "../i/data/img/monkeytype.svg",
     text: "monkeytype",
     link: "https://monkeytype.com/",
     index: 0,
   },
   {
-    icon: "../data/img/git.svg",
+    icon: "../i/data/img/git.svg",
     text: "git",
     link: "https://git-scm.com/",
     index: 0,
@@ -255,8 +257,9 @@ const change_id = () => {
 };
 
 const change_color = () => {
-  let background =
-    lock || hoverring ? identities[current].color : "transparent";
+  let background = lock || hoverring
+    ? identities[current].color
+    : "transparent";
   if (info_showing) background = "white";
   name.style.background = background;
   id("cursor").style.background = identities[current].color;
@@ -303,8 +306,9 @@ const change_grid_background_color = (i = 0) => {
     const grid_spot = document.getElementById(`grid-spot-${i}`);
     if (grid_spot) {
       if (!grid_hover_status[i]) {
-        grid_spot.style.background =
-          hoverring || lock ? identities[current].subcolor : "white";
+        grid_spot.style.background = hoverring || lock
+          ? identities[current].subcolor
+          : "white";
       } else {
         grid_spot.style.background = identities[current].color;
       }

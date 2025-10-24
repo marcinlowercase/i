@@ -9,7 +9,7 @@ const start_audio = (audio_id) => {
     });
   } else {
     console.error(
-      `Audio element with ID "${audio_id}" not found or is not an <audio> tag.`
+      `Audio element with ID "${audio_id}" not found or is not an <audio> tag.`,
     );
   }
 };

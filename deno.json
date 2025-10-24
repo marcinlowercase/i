@@ -3,7 +3,8 @@
     "@std/assert": "jsr:@std/assert@1"
   },
   "fmt": {
-    "files": ["."]
+    "include": ["."],
+    "exclude": []
   },
   "tasks": {
     "i": "deno --allow-net --allow-read server.js"

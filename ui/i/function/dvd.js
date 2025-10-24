@@ -75,15 +75,16 @@ const start_dvd_bounce = (id, originalX, originalY, zoom, speed) => {
         recreate_grid_layout();
 
         change_id();
-        if (lock || hoverring)
+        if (lock || hoverring) {
           dvd.style.zIndex = dvd.style.zIndex === "10000" ? "12321" : "10000";
-        else {
+        } else {
           dvd.style.zIndex = "10000";
         }
         // change_grid_background();
 
-        if (info_showing)
+        if (info_showing) {
           document.body.style.background = identities[current].color;
+        }
 
         last_bounce_time = current_time;
       }

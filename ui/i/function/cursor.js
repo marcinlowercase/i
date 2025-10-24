@@ -11,7 +11,8 @@ if (!on_touch_only_device()) {
 
   // Listen for double-click event on the cursor
   cursor.addEventListener("dblclick", () => {
-    document.body.style.background =
-      document.body.style.background === "black" ? "white" : "black";
+    document.body.style.background = document.body.style.background === "black"
+      ? "white"
+      : "black";
   });
 }

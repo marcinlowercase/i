@@ -1,27 +1,27 @@
 /* i_am.css */
 
 .greeting {
-    color: white;
-    font-family: var(--mono-font);
-    font-size: xx-large;
-    font-weight: lighter;
-    left: 50%;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    transition: opacity 0.5s;
-    z-index: 11;
+  color: white;
+  font-family: var(--mono-font);
+  font-size: xx-large;
+  font-weight: lighter;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transition: opacity 0.5s;
+  z-index: 11;
 }
 #i_am {
-    transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
 }
 
 #a_programmer {
-    transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
 }
 
 @media (max-width: 768px) {
-    .greeting {
-        width: 80%;
-    }
+  .greeting {
+    width: 80%;
+  }
 }

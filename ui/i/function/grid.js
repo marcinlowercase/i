@@ -13,11 +13,10 @@ const create_grid_layout = () => {
   const grid_side =
     (document.documentElement.clientWidth - (column - 1) * gap_size) / column;
 
-  row =
-    Math.floor(
-      (document.documentElement.clientHeight - (column - 1) * gap_size) /
-        grid_side,
-    ) + 1;
+  row = Math.floor(
+    (document.documentElement.clientHeight - (column - 1) * gap_size) /
+      grid_side,
+  ) + 1;
   grid_layout.style.gridTemplateColumns = `repeat(${column}, ${grid_side}px)`;
   grid_layout.style.gridTemplateRows = `repeat(${row}, ${grid_side}px)`;
   grid_layout.style.gap = `${gap_size}px`;
@@ -83,11 +82,12 @@ const create_grid_layout = () => {
           id("i_am").style.opacity = "1";
           id("a_programmer").style.opacity = "1";
           if (!i_am_showing) {
-            if (info_showing)
+            if (info_showing) {
               // type_writer_effect("i_am", `I am Theo,`, 100, () => {
               //   type_writer_effect("a_programmer", `a Programmer`, 100);
               // });
               i_am_showing = true;
+            }
           }
 
           id("name").innerText = "just a placeholder";
@@ -142,8 +142,9 @@ const create_grid_layout = () => {
   document.body.appendChild(grid_layout);
   setTimeout(() => {
     grid_layout.style.opacity = "1";
-    if ((lock || hoverring) && !info_showing)
+    if ((lock || hoverring) && !info_showing) {
       document.body.style.background = "black";
+    }
   }, 500);
 
   return grid_layout;

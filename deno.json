@@ -5,8 +5,5 @@
   "fmt": {
     "include": ["."],
     "exclude": []
-  },
-  "tasks": {
-    "i": "deno --allow-net --allow-read server.js"
   }
 }

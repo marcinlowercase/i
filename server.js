@@ -54,8 +54,6 @@ const handle_request = async (request) => {
         break;
       default:
         file_path = join(Deno.cwd(), ui_directory, path_name);
-        console.log(path_name);
-
         break;
     }
 

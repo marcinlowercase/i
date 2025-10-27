@@ -51,11 +51,8 @@ const handle_request = async (request) => {
   try {
     let file_path = "";
     switch (path_name) {
-      case "/i":
-        file_path = join(Deno.cwd(), ui_directory, "i", "i.html");
-        break;
-      case "/a":
-        file_path = join(Deno.cwd(), ui_directory, "a", "a.html");
+      case "/":
+        file_path = join(Deno.cwd(), ui_directory, "index.html");
         break;
       default:
         file_path = join(Deno.cwd(), ui_directory, path_name);

@@ -240,7 +240,7 @@ const change_id = () => {
 
   name.style.opacity = "0";
 
-  document.title = identities[current].name;
+  // document.title = identities[current].name;
 
   setTimeout(() => {
     name.innerText = info_showing

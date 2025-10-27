@@ -1,9 +1,18 @@
 /* index.css */
 
+@font-face {
+    font-family: "vga";
+    src:
+            local("vga"),
+            url("../data/font/perfect_dos_vga_437.ttf") format("truetype");
+}
+
 :root {
     --sans-font: "Outfit", sans-serif;
     --serif-font: "Noto Serif", serif;
-    --mono-font: "courier-std", monospace;
+    /*--mono-font: "courier-std", monospace;*/
+    --mono-font: "vga", monospace;
+
 
     /* --font-size--xl: 32px;
   --font-size--l: 24px;

@@ -1,9 +1,7 @@
 //server.js
-import { serve } from "https://deno.land/std@0.211.0/http/server.ts";
 import { join } from "https://deno.land/std@0.211.0/path/mod.ts";
 import { contentType } from "https://deno.land/std@0.211.0/media_types/mod.ts";
 
-const PORT = 11111;
 const ui_directory = "ui";
 
 const client_config_script = (request) => {
@@ -68,5 +66,5 @@ const handle_request = async (request) => {
   }
 };
 
-console.log(`Server listening on port ${PORT}`);
-await serve(handle_request, { port: PORT });
+Deno.serve(handle_request);
+

@@ -21,7 +21,7 @@ const copy_email = () => {
   navigator.clipboard
     .writeText(email)
     .then(() => {
-      prompt("my email copied to clipboard. you can paste it now: ", email);
+      prompt("my email was copied to clipboard: ", email);
     })
     .catch((err) => {
       console.error("Failed to access clipboard", err);

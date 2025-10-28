@@ -2,17 +2,20 @@
 
 @font-face {
     font-family: "vga";
-    src:
-            local("vga"),
-            url("../data/font/perfect_dos_vga_437.ttf") format("truetype");
+    src: url("../data/font/perfect_dos_vga_437.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "courier_code";
+    src: url("../data/font/courier_code.ttf") format("truetype");
 }
 
 :root {
     --sans-font: "Outfit", sans-serif;
     --serif-font: "Noto Serif", serif;
     /*--mono-font: "courier-std", monospace;*/
-    --mono-font: "vga", monospace;
-
+    /*--mono-font: "vga", monospace;*/
+    --mono-font: "courier_code", monospace;
 
     /* --font-size--xl: 32px;
   --font-size--l: 24px;
@@ -31,7 +34,6 @@
 
     --border-radius--regular: 24px;
 }
-
 
 body {
     cursor: grabbing;

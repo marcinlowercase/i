@@ -87,7 +87,8 @@ let interesting = [
   {
     icon: "../data/img/c.svg",
     text: "c",
-    link: "https://www.google.com/search?q=The+C+Programming+Language&sca_esv=242238691926b20a&sxsrf=AHTn8zqJl_uKnGdxTPEdh9gA0L8wcExJiA%3A1744243070841&ei=fgn3Z7qKM-urptQPiZyg2Aw&ved=0ahUKEwi6wY7lk8yMAxXrlYkEHQkOCMsQ4dUDCBA&uact=5&oq=The+C+Programming+Language&gs_lp=Egxnd3Mtd2l6LXNlcnAiGlRoZSBDIFByb2dyYW1taW5nIExhbmd1YWdlMgoQIxiABBgnGIoFMgoQIxiABBgnGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgoQLhiABBhDGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAAGIAESNUpUABY4CVwAXgBkAEAmAF7oAHEE6oBBDIxLja4AQPIAQD4AQGYAhygAuEUwgIEECMYJ8ICEBAAGIAEGLEDGEMYgwEYigXCAgoQABiABBgUGIcCwgIOEC4YgAQYsQMY0QMYxwHCAgsQLhiABBixAxiDAcICDhAuGIAEGMcBGI4FGK8BwgILEC4YgAQYxwEYrwHCAgUQLhiABMICCBAuGIAEGNQCwgIHEAAYgAQYCsICBxAjGLACGCfCAgoQLhiABBjUAhgNwgIHEAAYgAQYDcICBxAuGIAEGA2YAwCSBwUxOC4xMKAHpdQDsgcFMTcuMTC4B9sU&sclient=gws-wiz-serp",
+    link:
+      "https://www.google.com/search?q=The+C+Programming+Language&sca_esv=242238691926b20a&sxsrf=AHTn8zqJl_uKnGdxTPEdh9gA0L8wcExJiA%3A1744243070841&ei=fgn3Z7qKM-urptQPiZyg2Aw&ved=0ahUKEwi6wY7lk8yMAxXrlYkEHQkOCMsQ4dUDCBA&uact=5&oq=The+C+Programming+Language&gs_lp=Egxnd3Mtd2l6LXNlcnAiGlRoZSBDIFByb2dyYW1taW5nIExhbmd1YWdlMgoQIxiABBgnGIoFMgoQIxiABBgnGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgoQLhiABBhDGIoFMg0QLhiABBhDGNQCGIoFMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAAGIAESNUpUABY4CVwAXgBkAEAmAF7oAHEE6oBBDIxLja4AQPIAQD4AQGYAhygAuEUwgIEECMYJ8ICEBAAGIAEGLEDGEMYgwEYigXCAgoQABiABBgUGIcCwgIOEC4YgAQYsQMY0QMYxwHCAgsQLhiABBixAxiDAcICDhAuGIAEGMcBGI4FGK8BwgILEC4YgAQYxwEYrwHCAgUQLhiABMICCBAuGIAEGNQCwgIHEAAYgAQYCsICBxAjGLACGCfCAgoQLhiABBjUAhgNwgIHEAAYgAQYDcICBxAuGIAEGA2YAwCSBwUxOC4xMKAHpdQDsgcFMTcuMTC4B9sU&sclient=gws-wiz-serp",
     index: 0,
   },
   {
@@ -147,7 +148,8 @@ let interesting = [
   {
     icon: "../data/img/swift.svg",
     text: "swift",
-    link: "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/",
+    link:
+      "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/",
     index: 0,
   },
   {
@@ -255,8 +257,9 @@ const change_id = () => {
 };
 
 const change_color = () => {
-  let background =
-    lock || hoverring ? identities[current].color : "transparent";
+  let background = lock || hoverring
+    ? identities[current].color
+    : "transparent";
   if (info_showing) background = "white";
   name.style.background = background;
   id("cursor").style.background = identities[current].color;
@@ -303,8 +306,9 @@ const change_grid_background_color = (i = 0) => {
     const grid_spot = document.getElementById(`grid-spot-${i}`);
     if (grid_spot) {
       if (!grid_hover_status[i]) {
-        grid_spot.style.background =
-          hoverring || lock ? identities[current].subcolor : "white";
+        grid_spot.style.background = hoverring || lock
+          ? identities[current].subcolor
+          : "white";
       } else {
         grid_spot.style.background = identities[current].color;
       }

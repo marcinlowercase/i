@@ -33,8 +33,8 @@ const index_response = async (file_path, request) => {
   }
 
   const response_headers = new Headers({
-    "content-type":
-      contentType(`.${file_extension}`) || "application/octet-stream",
+    "content-type": contentType(`.${file_extension}`) ||
+      "application/octet-stream",
   });
 
   return new Response(file_content, {
